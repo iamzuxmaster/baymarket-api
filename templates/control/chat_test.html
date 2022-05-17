@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'vue.js' %}"></script>
+    <script>
+        function getToken(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== "") {
+                var cookies = document.cookie.split(";");
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === name + "=") {
+                        cookieValue = decodeURIComponent(
+                            cookie.substring(name.length + 1)
+                        );
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken("csrftoken");
+    </script>
+</head>
+<body>
+    <div id="root">
+
+        <div style="width: 500px; border: solid 3px #333;">
+            <div v-for="i in messages">
+                <p v-if="i.sender == sender" style="margin-left: 400px;">[[i.message]]</p>
+                <p v-else>[[i.message]]</p>
+            </div>
+        </div>
+
+        <input v-model="message" type="text">
+        <input @click="sendMessage()" type="submit" value="Submit">
+
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: "#root",
+            delimiters: ["[[", "]]"],
+
+            data: {
+                room_id: 0,
+                messages: [],
+                sender: `${ {{request.user.account.id}} }`,
+                message: '',
+            },
+
+            mounted() {
+                setInterval( () => {
+                    fetch("get/all/messages/")
+                        .then(resp => resp.json())
+                        .then(data => {
+                            this.messages = data.messages
+                            this.room_id = data.room_id
+                        })
+                }, 1000)
+            },
+
+            methods: {
+                sendMessage() {
+                    fetch("send/message/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRFToken": csrftoken
+                        },
+                        body: JSON.stringify({
+                            message: this.message,
+                            room: this.room_id
+                        })
+                    })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        this.messages.push(data)
+                        this.message = ''
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
