@@ -102,6 +102,7 @@ class Product(models.Model):
     not_verified = models.BooleanField(default=False)
     not_verified_message = models.TextField(null=True, blank=True)
     moderation = models.BooleanField(default=True)  
+    moderator = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True, blank=True, related_name="baymarket_product_moderator")
     similar=  models.CharField(max_length=255, null=True, blank=True)
     
 

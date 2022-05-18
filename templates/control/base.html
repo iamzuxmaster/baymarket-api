@@ -377,10 +377,6 @@
     <!-- Main JS-->
     <script src="{% static 'control/assets/js/main.js' %}"></script>
     <script src="{% static 'control/assets/js/orclock.js' %}"></script>
-    <script src="http://{{base.chat_server}}:3000/socket.io/socket.io.js"></script>
-    <script>
-        const socket = io.connect('http://{{base.chat_server}}:3000');
-    </script>
 
     <script>
         let btn = document.querySelector('#userchat');
