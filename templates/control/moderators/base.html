@@ -179,15 +179,6 @@
     })
   </script>
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.min.js"></script>
-
-  <script>
-    const socket = io.connect();
-    socket.on('connect', function() {
-        socket.emit('my_connect', {data: "Hello World"});
-    });
-    
-  </script>
   <div class="col">
     <div class="modal fade" id="userchats" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-md modal-dialog-centered" style="overflow-y: initial !important">
@@ -249,6 +240,14 @@
     <!-- Main JS-->
     <script src="{% static 'control/assets/js/main.js' %}"></script>
 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.min.js"></script>
+
+    <script>
+      const socket = io.connect();
+      socket.on('connect', function() {
+          socket.emit('my_connect', {data: "Hello World"});
+      });  
+    </script>
      {% block js_content %}
      {% endblock js_content %}
   </body>
