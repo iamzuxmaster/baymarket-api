@@ -1,0 +1,283 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+    
+        <section id="showcase" class="showcase">
+            <div class="showcase-blog">
+                <div class="showcase-body">
+                    <div class="container">
+                        <div class="category-menu">
+                            <div class="showcase-breadecrump">
+                                <p><span class="active"><a href="#.">By Market</a></p>
+                            </div>
+                            <h2 class="category-name">By Market</h2>
+                            <div class="showcase-filter">
+                                <div class="sh-filter-card">
+                                    <h5>Holat turi</h5>
+                                    <label>
+                                        <input class="marka-radio" name="work" type="radio">
+                                        <span class="marka-span">Chakana Savdo</span>
+                                    </label>
+                                    <label>
+                                        <input class="marka-radio" name="work" type="radio">
+                                        <span class="marka-span">Ulgurchi Savdo</span>
+                                    </label>
+                                </div>
+                                <div class="sh-filter">
+                                    <h5>Qanday ish qidiryapsiz ?</h5>
+                                    <div class="sh-filter-blog w-filter-blog">
+                                        <div class="filter-section">
+                                            <ul class="filter-accardion">
+                                                <li id="filter-input" class="menu-item-has-children">
+                                                    <p class="top-t">Bu yerda qidiring</p>
+                                                    <ul class="submenu">
+                                                        <li>
+                                                            <input type="number" placeholder="Nima qidiryapsiz">
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="sh-filter-btn">Natijani ko'rsatish</button>
+                                </div>
+                            </div>
+                            <br>
+                            <h4 class="category-name">Do'konlar</h4>
+                            <div class="category-mini-blog owl-carousel">
+                                <div class="category-box item">
+                                    <a href="category.html">
+                                        <img src="{% static '/web/assets/img/bymarket/category/category1.png' %}" alt="">
+                                        <h5 class="category-title">MDF mahsulotlari</h5>
+                                        <p class="result">14 do'konda</p>
+                                    </a>
+                                </div>
+                                <div class="category-box item">
+                                    <a href="category.html">
+                                        <img src="{% static '/web/assets/img/bymarket/category/category1.png' %}" alt="">
+                                        <h5 class="category-title">Tahatalar</h5>
+                                        <p class="result">26 do'konda</p>
+                                    </a>
+                                </div>
+                                <div class="category-box item">
+                                    <a href="category.html">
+                                        <img src="{% static '/web/assets/img/bymarket/category/category1.png' %}" alt="">
+                                        <h5 class="category-title">DSP mahsulotlari</h5>
+                                        <p class="result">16 do'konda</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="wrapper">
+            <div class="wrapper-blog">
+                <div class="container">
+                    <div class="products-content">
+                        <div class="product-content-child">
+                            <div id="left-filter" class="filter">
+                                <div class="filter-blog">
+                                    <div class="filter-header">
+                                        <div class="filter-name">
+                                            <h4>Saralash</h4>
+                                            <img src="{% static 'web/assets/img/baycar/element/filter.png' %}" alt="">
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <div class="filter-body">
+                                        <ul class="filter-accardion">
+                                            <li class="menu-item-has-children">
+                                                <p>Toifasi Boyicha</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <label>
+                                                            <input class="marka-radio" name="category" type="radio">
+                                                            <span class="marka-span">Qurilish metriallar</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label>
+                                                            <input class="marka-radio" name="category" type="radio">
+                                                            <span class="marka-span">Elektronika</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="category" type="radio">
+                                                            <span class="marka-span">Kampyuterva jihozlar</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="category" type="radio">
+                                                            <span class="marka-span">Telefon Va Jihozlar</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <hr class="mt-4">
+                                    </div>
+                                    <div class="filter-body">
+                                        <h5 class="f-name">Joylashuv</h5>
+                                        <ul class="filter-accardion">
+                                            <li class="menu-item-has-children">
+                                                <p>Viloyat</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Tashkent</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Andijon</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Namangan</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Farg'ona</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Buxoro</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Samarqand</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Jizzax</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Navoiy</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Qashqadaryo</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Surxandaryo</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Xorazm</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Sirdaryo</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Qoraqalpog'iston Resp</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <hr class="mt-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content-child">
+                            <div class="products-nav">
+                                <h4 class="p-nav-name">Top E'lonlar</h4>
+                                <div class="grid-list-filter">
+                                    <div id="grid-icon-btn" class="f-icon icon-grid active">
+                                        <ion-icon name="grid-outline"></ion-icon>
+                                    </div>
+                                    <div id="list-icon-btn" class="f-icon icon-list">
+                                        <ion-icon name="list-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products">
+                                <!-- Products Grid =================================== -->
+                                <div id="grid-products" class="products-blog">
+
+                                    <div class="products-box">
+                                        <div>
+                                            <a href="{% url 'web_bywork_detail' %}" class="img-a">
+                                                <img src="{% static 'web/assets/img/bywork/products/person1.jpg' %}" alt="">
+                                            </a> 
+                                            <div class="product-about">
+                                                <div class="product-title">
+                                                    <a href="{% url 'web_bywork_detail' %}">Web Dasturchi</a>
+                                                    <ion-icon name="heart-outline"></ion-icon>
+                                                </div>
+                                                <p class="product-price">16 800 UYE</p>
+                                                <p class="product-address">Tashkent</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Productsc List ================================   -->
+                                <div id="list-products" class="products-blog-list d-none">
+                                    <div class="product-list-box">
+                                        <div class="grid-div">
+                                            <a href="{% url 'web_bywork_detail' %}" class="img-a">
+                                                <img src="{% static 'web/assets/img/bywork/products/person1.jpg' %}" alt="">
+                                            </a> 
+                                            <div class="product-about">
+                                                <div class="product-about-child d-block">
+                                                    <div class="product-title">
+                                                        <a href="{% url 'web_bywork_detail' %}">Новостройка! Продается 2/4/9...</a>
+                                                        <p class="product-price d-block text-right">27 000 000 Uye</p>
+                                                    </div>  
+                                                    <h5><ion-icon name="cash-outline"></ion-icon> 27 000 000 UYE</h5>
+                                                    <p class="calendar"> Ishlarini qilaman Kuzovlarni ta’mirlash, Kraska sepish</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="location"><ion-icon name="location-outline"></ion-icon> Tashkent</p>
+                                                        <div class="heart-ion-icon text-right">
+                                                            <ion-icon name="heart-outline"></ion-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+{% endblock content %}

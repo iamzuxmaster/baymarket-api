@@ -45,9 +45,6 @@ class Category(models.Model):
         subcategories = SubCategory.objects.filter(category=self).count()
         return subcategories
 
-
-
-
 class SubCategory(models.Model): 
     img = ResizedImageField(size=[600,600], quality=100, upload_to="baymarket/categories/")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
@@ -147,10 +144,14 @@ class Product(models.Model):
     title_ru = models.CharField(max_length=255)
     description_uz = models.TextField()
     description_ru = models.TextField(null=True, blank=True)
+    year = models.IntegerField(null=True, blank=True)
     slug = models.CharField(max_length=255, null=True, blank=True)
     priority = models.IntegerField()
+    dollar = models.BooleanField(default=False, null=True, blank=True)
+    sum = models.BooleanField(default=False, null=True, blank=True)
     price = models.IntegerField()
     fix_price = models.IntegerField(null=True, blank=True)
+    arenda = models.BooleanField(default=False, null=True, blank=True)
     available = models.BooleanField(default=True)
     drop = models.BooleanField(default=False)
     img_min = ResizedImageField(size=[300,300], quality=100, upload_to="web/products/300x300/")

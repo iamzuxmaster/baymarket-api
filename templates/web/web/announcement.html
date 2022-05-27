@@ -1,0 +1,434 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<section id="showcase" class="showcase">
+    <div class="showcase-blog">
+        <div class="showcase-body pb-0">
+            <div class="container">
+                <div class="category-menu">
+                    <div class="showcase-breadecrump">
+                        <p><span><a href="{% url 'web_bycar_index' %}">By Car</a></span> / <span class="active"><a href="#.">E'lon berish</a></span></p>
+                        <h4 class="t-text mb-4">E'lon berish</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="wrapper">
+    <div class="wrapper-blog">
+        <div class="container">
+            <div class="products-content">
+
+                <div class="product-content-child">
+                    <div id="left-filter" class="filter">
+                        <div class="filter-blog">
+                            <div class="filter-header">
+                                <div class="filter-name">
+                                    <h4>E'lon haqida</h4>
+                                    <img src="{% static 'web/assets/img/baycar/element/filter.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="filter-body">
+                                <h5 class="f-name">Joylashuv</h5>
+                                <ul class="filter-accardion">
+                                    <li class="menu-item-has-children">
+                                        <p>Viloyat</p>
+                                        <ul class="submenu">
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Tashkent" name="region" type="radio">
+                                                    <span class="marka-span">Tashkent</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Andijon" name="region" type="radio">
+                                                    <span class="marka-span">Andijon</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Namangan" name="region" type="radio">
+                                                    <span class="marka-span">Namangan</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Farg'ona" name="region" type="radio">
+                                                    <span class="marka-span">Farg'ona</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Buxoro" name="region" type="radio">
+                                                    <span class="marka-span">Buxoro</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Samarqand" name="region" type="radio">
+                                                    <span class="marka-span">Samarqand</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Jizzax" name="region" type="radio">
+                                                    <span class="marka-span">Jizzax</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Navoiy" name="region" type="radio">
+                                                    <span class="marka-span">Navoiy</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Qashqadaryo" name="region" type="radio">
+                                                    <span class="marka-span">Qashqadaryo</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" data-region="Surxandaryo" name="region" type="radio">
+                                                    <span class="marka-span">Surxandaryo</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" name="region" data-region="Xorazm" type="radio">
+                                                    <span class="marka-span">Xorazm</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" name="region" data-region="Sirdaryo" type="radio">
+                                                    <span class="marka-span">Sirdaryo</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio region-checked" name="region" data-region="Qoraqalpog'iston" type="radio">
+                                                    <span class="marka-span">Qoraqalpog'iston Resp</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="filter-accardion">
+                                    <li class="menu-item-has-children">
+                                        <p>Shahar</p>
+                                        <ul class="submenu">
+                                            <li>
+                                                <label>
+                                                    <input class="marka-radio city-checked" data-city="Tashkent" name="city" type="radio">
+                                                    <span class="marka-span">Yunusobod</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label>
+                                                    <input class="marka-radio city-checked" data-city="Andijon" name="city" type="radio">
+                                                    <span class="marka-span">Chilonzor</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <hr class="mt-4">
+                            </div>
+                            <div class="filter-body">
+                                <h5 class="f-name">Ma'shina haqida</h5>
+                                <ul class="filter-accardion">
+                                    <li class="menu-item-has-children">
+                                        <p>Marka</p>
+                                        <ul class="submenu">
+                                            <li>
+                                                <label>
+                                                    <input class="marka-radio car-brand" name=""   data-brand="" type="radio">
+                                                    <span class="marka-span">Chevrolet</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="filter-accardion">
+                                    <li id="filter-input" class="menu-item-has-children">
+                                        <p class="top-t">Yili</p>
+                                        <ul class="submenu">
+                                            <li>
+                                                <input type="number" placeholder="Masalan, 2022">
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="filter-accardion">
+                                    <li class="menu-item-has-children">
+                                        <p>Rangi</p>
+                                        <ul class="submenu">
+                                            <li>
+                                                <label>
+                                                    <input class="marka-radio car-color" name="color"   data-color="" type="radio">
+                                                    <span class="marka-span">Oq</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <hr class="mt-4">
+                            </div>
+                            <div class="filter-body">
+                                <h5 class="f-name">Ichki Tuzilish</h5>
+                                <ul class="filter-accardion">
+                                    <li class="menu-item-has-children">
+                                        <p>Yoqilg'i turi</p>
+                                        <ul class="submenu">
+                                            <li>
+                                                <label>
+                                                    <input class="marka-radio car-fuel" name="fuel"   data-fuel="" type="radio">
+                                                    <span class="marka-span">Gaz</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="filter-accardion">
+                                    <li class="menu-item-has-children">
+                                        <p>Uzatish qutisi</p>
+                                        <ul class="submenu">
+                                            <li>
+                                                <label>
+                                                    <input class="marka-radio car-transmission" name="transmission" data-transmission="" type="radio">
+                                                    <span class="marka-span">Mexanika</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="filter-accardion">
+                                    <li id="filter-input" class="menu-item-has-children">
+                                        <p class="top-t">Yurgan masofasi</p>
+                                        <ul class="submenu">
+                                            <li>
+                                                <input type="number" placeholder="Masalan, 168 000">
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <hr class="mt-4">
+                            </div>
+                            <div class="filter-body">
+                                <h5 class="f-name">E'lon beruvchi</h5>
+                                <ul class="filter-announcement">
+                                    <li>
+                                        <label>
+                                            <input class="marka-radio announcement" name="announcement" data-ann="egasi" type="radio">
+                                            <span class="marka-span">Egasi</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="">
+                                            <input class="marka-radio announcement" name="announcement" data-ann="Korxona" type="radio">
+                                            <span class="marka-span">Korxona</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <hr class="mt-4">
+                            </div>
+                            <div class="filter-body">
+                                <ul class="filter-announcement">
+                                    <li>
+                                        <label>
+                                            <input class="marka-radio car-situation" name="situation" data-situation="" type="radio">
+                                            <span class="marka-span">Avtosalon</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input class="marka-radio situation" name="situation" data-situation="" type="radio">
+                                            <span class="marka-span">B/U</span>
+                                        </label>
+                                    </li>                                    
+                                    <li>
+                                        <label>
+                                            <input class="marka-radio situation" name="situation" data-situation="" type="radio">
+                                            <span class="marka-span">Arenda</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-content-child">
+                    <div class="products-na">
+                        <h5 class="t-text">E'lonni joylash uchun buyerdagi barcha ma'lumotlarni to'ldiring</h5>
+                        <p class="t-text py-2">Birinchi surat e'loningiz asosiy rasmi bo'ladi.Suratni uustiga bosim rasm joylashingiz mumkun</p>
+                    </div>
+                    <div class="products"> 
+                        <div class="products-img">
+                            <div class="transpar">
+                                <i class="bi bi-trash d-none trash-icon"></i>
+                                <label class="">
+                                    <img src="" style="border-radius: 8px;" class="changed-photo" alt="">
+                                    <div class="photo change-none">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </div>
+                                    <input type="file" name="img" class="d-none change-img">
+                                </label>
+                            </div>
+
+                            <div class="transpar">
+                                <label class="">
+                                    <img src="" style="border-radius: 8px;" class="changed-photo" alt="">
+                                    <div class="photo change-none">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </div>
+                                    <input type="file" name="productimage" class="d-none change-img">
+                                </label>
+                            </div>
+
+                            <div class="transpar">
+                                <label class="">
+                                    <img src="" style="border-radius: 8px;" class="changed-photo" alt="">
+                                    <div class="photo change-none">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </div>
+                                    <input type="file" name="productimage" class="d-none change-img">
+                                </label>
+                            </div>
+
+                            <div class="transpar">
+                                <label class="">
+                                    <img src="" style="border-radius: 8px;" class="changed-photo" alt="">
+                                    <div class="photo change-none">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </div>
+                                    <input type="file" name="productimage" class="d-none change-img">
+                                </label>
+                            </div>
+
+                            <div class="transpar">
+                                <label class="">
+                                    <img src="" style="border-radius: 8px;" class="changed-photo" alt="">
+                                    <div class="photo change-none">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </div>
+                                    <input type="file" name="productimage" class="d-none change-img">
+                                </label>
+                            </div>
+
+                            <div class="transpar">
+                                <label class="">
+                                    <img src="" style="border-radius: 8px;" class="changed-photo" alt="">
+                                    <div class="photo change-none">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </div>
+                                    <input type="file" name="productimage" class="d-none change-img">
+                                </label>
+                            </div>
+
+                            <div class="transpar">
+                                <label class="">
+                                    <img src="" style="border-radius: 8px;" class="changed-photo" alt="">
+                                    <div class="photo change-none">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </div>
+                                    <input type="file" name="productimage" class="d-none change-img">
+                                </label>
+                            </div>
+                            
+                            <div class="transpar">
+                                <label class="">
+                                    <img src="" style="border-radius: 8px;" class="changed-photo" alt="">
+                                    <div class="photo change-none">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </div>
+                                    <input type="file" name="productimage" class="d-none change-img">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="product-information">
+                                    <div class="price-type">
+                                        <button class="active">Narxli</button>
+                                        <button>Bepul</button>
+                                        <button>Ayirborlash</button>
+                                    </div>
+                                    <div class="price-number">
+                                        <small>Narx</small>
+                                        <div class="input-price">
+                                            <input type="number">
+                                            <select class="selectpicker">
+                                                <option>So'm</option>
+                                                <option>$</option>
+                                              </select>
+                                        </div>
+                                        <div class="filter-on-of">
+                                            <p>Avtosalon</p>
+                                            <label for="check">
+                                                <div class="on-of-btn">
+                                                    <div id="r-l-box" class="r-box"></div>
+                                                </div>
+                                                <input type="checkbox" class="d-none salon" id="check">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="private">
+                                        <p>Xusuiy yoki Biznes</p>
+                                        <div class="button-private">
+                                            <button class="active">Jismoniy Shaxs</button>
+                                            <button>Biznes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <p>Tavsif</p>
+                                <textarea cols="30" rows="10" placeholder="E'lon haqida batafsil"></textarea>
+                            </div>
+                            <div class="create-btn">
+                                <button style="border: none;" data-toggle="modal" data-target="#announcement-success">E'lon joylash</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    document.querySelectorAll('.change-img').forEach(change => {
+        change.addEventListener('change', () => {
+            change.parentElement.parentElement.children[0].classList.remove('d-none')
+            change.parentElement.children[1].classList.add('d-none')
+            change.parentElement.parentElement.classList.add('tra')
+            const [my_file] = change.files
+            if (my_file) {
+                change.parentElement.children[0].src = URL.createObjectURL(my_file)
+            }
+            change.parentElement.parentElement.children[0].addEventListener('click', () => {
+                change.parentElement.children[0].src = ''
+                change.parentElement.parentElement.children[0].classList.add('d-none')
+                change.parentElement.children[1].classList.remove('d-none')
+                change.parentElement.parentElement.classList.remove('tra')
+            })
+        })
+    })
+
+
+    // $('.change-none').addClass('d-none')
+
+    // $('.transpar').addClass('tra')
+    
+    
+    
+</script>
+
+{% endblock content %}

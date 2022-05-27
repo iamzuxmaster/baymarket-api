@@ -1,0 +1,40 @@
+ion-icon {
+  font-size: 22px;
+  color: #8ca6b7 !important;
+}
+
+  /* ###################################################### */
+  /* Navigation */
+
+.sub_price_type {
+  display: grid !important;
+  grid-template-columns: 8fr 1fr !important;
+  grid-gap: 4px !important;
+}
+
+.prp .dropdown-btn {
+  display: none;
+}
+
+select:focus{
+  outline: none;
+}
+
+
+
+.sub_price_type .left-select-price {
+  display: flex;
+  align-items: center;
+}
+
+.sub_price_type .left-select-price select {
+  border: 1px solid #8ca6b7;
+  font-size: 12px;
+  background-color: #f6f8fa;
+  border-radius: 8px;
+  padding: 8px 7px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+

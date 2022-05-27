@@ -1,0 +1,240 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+    
+        <section id="showcase" class="showcase">
+            <div class="showcase-blog">
+                <div class="showcase-body pb-0">
+                    <div class="container">
+                        <div class="category-menu">
+                            <div class="showcase-breadecrump">
+                                <p><span><a href="{% url 'web_bymarket_index' %}">By Market</a></span> / <span class="active"><a href="#.">Web Dasturchi</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="wrapper-detail">
+            <div class="wrapper-blog-detail">
+                <div class="container">
+                    <div class="product-detail-content">
+                        <div class="product-detail-child">
+                            <div class="product-detail-wrap">
+                                <div class="product-detail-img">
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="item-one" role="tabpanel" aria-labelledby="item-one-tab">
+                                            <div class="shop-details-img">
+                                                <img src="{% static 'web/assets/img/bywork/products/person1.jpg' %}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="item-two" role="tabpanel" aria-labelledby="item-two-tab">
+                                            <div class="shop-details-img">
+                                                <img src="{% static 'web/assets/img/bywork/products/person2.jpg' %}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="item-three" role="tabpanel" aria-labelledby="item-three-tab">
+                                            <div class="shop-details-img">
+                                                <img src="{% static 'web/assets/img/bywork/products/person3.jpg' %}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="item-four" role="tabpanel" aria-labelledby="item-four-tab">
+                                            <div class="shop-details-img">
+                                                <img src="{% static 'web/assets/img/bywork/products/person4.jpg' %}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-detail-nav">
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" id="item-one-tab" data-toggle="tab" href="#item-one" role="tab" aria-controls="item-one" aria-selected="true"><img src="{% static 'web/assets/img/bywork/products/person1.jpg' %}" alt=""></a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="item-two-tab" data-toggle="tab" href="#item-two" role="tab" aria-controls="item-two" aria-selected="false"><img src="{% static 'web/assets/img/bywork/products/person3.jpg' %}" alt=""></a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="item-three-tab" data-toggle="tab" href="#item-three" role="tab" aria-controls="item-three" aria-selected="false"><img src="{% static 'web/assets/img/bywork/products/person4.jpg' %}" alt=""></a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="item-four-tab" data-toggle="tab" href="#item-four" role="tab" aria-controls="item-four" aria-selected="false"><img src="{% static 'web/assets/img/byhouse/product/house5.jpg' %}" alt=""></a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="product-detail-about">
+                                <div class="p-d-date">
+                                    <p>Joylashtirildi bugun 21:22</p>
+                                </div>
+                                <div class="p-d-heart">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </div>
+                                <div class="p-d-title">
+                                    <h5>Web Dasturchi</h5>
+                                </div>
+                                <div class="p-d-price">
+                                    <h4>128 000 UYE</h4>
+                                    <h5>Kelishiladi</h5>
+                                </div>
+                                <div class="p-d-more">
+                                    <h4>"Caravan" logistics company</h4>
+                                    <div class="p-d-grid">
+                                        <div class="p-d-child">
+                                            <p><span class="light-title">Joylashuv:</span> <span class="bold">Uzbekiston</span></p>
+                                            <p><span class="light-title">Shahar:</span> <span class="bold">Tashkent</span></p>
+                                            <p><span class="light-title">Ish graffigi:</span> <span class="bold">Toliq ish kuni</span></p>
+                                            <p><span class="light-title">Tajriba:</span> <span class="bold">2 yildan yuqori</span></p>
+                                            <p><span class="light-title">Yosh:</span> <span class="bold">26</span></p>
+                                        </div>
+                                        <div class="p-d-child">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-d-content">
+                                    <h4>Qo'shimcha</h4>
+                                    <p>Cargomatic, uship, uber, lift kabi platformalarda ishlay oladigan mutahasis haydovchi qidiryapmiz bonorum et malorum'.
+                                        The physical source may have been the 1914 Loeb Classical Library edition of De finibus, where the Latin text, presented on
+                                        the left-hand (even) pages, breaks off on 
+                                       page 34 with "Neque porro quisquam est qui do-" and continues on page 36 with "lorem ipsum ...", suggesting that the 
+                                       galley type of that page was mixed up to make the dummy text seen today</p>
+                                </div>
+                                <div class="p-d-description">
+                                    <ul class="filter-accardion">
+                                        <li class="menu-item-has-children">
+                                            <p class="top-t">Batafsil</p>
+                                            <ul class="submenu">
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sed eaque asperiores ex, excepturi nostrum velit voluptatibus tenetur, soluta laudantium, reprehenderit neque eum commodi corporis? Ipsum quisquam quo quibusdam consequatur eum harum modi veniam consequuntur commodi? Doloribus sapiente iusto sed hic magni illo, dolore perspiciatis fugit, aperiam explicabo deleniti quo repellendus assumenda debitis vel dolorum eos facere dicta dolores quisquam.</p>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="p-d-footer">
+                                    <p>ID: 41240834</p>
+                                    <p><ion-icon name="eye-outline"></ion-icon> Ko'rishlar: 137</p>
+                                    <p style="color: #FF2E2E;"><a href="#."><ion-icon name="flag-outline" style="color: #FF2E2E;"></ion-icon>Shikoyat qilish</a></p>
+                                </div> 
+                            </div>
+
+                            <div class="product-detail-chat">
+                                <div class="user-blog">
+                                    <div class="user-about">
+                                        <img src="{% static 'web/assets/img/baycar/element/user.png' %}" alt="">
+                                        <div>
+                                            <p><strong>Akromova Umida</strong></p>
+                                            <p>Ro'yxatdan o'tgan sanasi 2020</p>
+                                            <p style="color: #8ca6b7">Online</p>
+                                        </div>
+                                    </div>
+                                    <div class="user-number">
+                                        <p><ion-icon name="call-sharp"></ion-icon> <span id="number-hide" class="hide">XXX XXX XXX</span><span id="number-show" class="show d-none">99 972 76 02</span></p>
+                                        <button id="number-show-hide" class="button-outline">Ko'rsatish</button>
+                                    </div>
+                                </div>
+                                <div class="send-message">
+                                    <textarea id="" cols="30" rows="6" placeholder="Xabaringgizni yuboring"></textarea>
+                                </div>
+                                <div class="chat-footer">
+                                    <button class="btn-gradient">Yuborish</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-detail-child">
+                            <div class="product-detail-banner">
+                                <div class="b-user-blog">
+                                    <h5>E'lon beruvchi</h5>
+                                    <div class="b-user-about">
+                                        <img src="{% static 'web/assets/img/baycar/element/user.png' %}" alt="">
+                                        <div>
+                                            <p><strong>Akromova Umida</strong></p>
+                                            <p>Ro'yxatdan o'tgan sanasi 2020</p>
+                                            <p style="color: #8ca6b7">Online</p>
+                                            <p><a href="#."><strong>Barcha E'lonlar</strong></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b-user-blog">
+                                    <div class="b-user-about">
+                                        <img style="border-radius: 0% !important;" src="{% static 'web/assets/img/baycar/element/map.png' %}" alt="">
+                                        <div>
+                                            <p><strong>Tashkent</strong></p>
+                                            <p style="color: #8ca6b7">Mirzo Ulug'bek</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div id="wishlist" class="b-background">
+            <div class="container">
+
+                <div class="products-nav d-flex align-items-center justify-content-between">
+                    <h3 class="p-nav-name">O'xshash E'lonlar</h3>
+                    <div class="grid-list-filter">
+                        <div class="f-icon icon-grid active" id="grid-icon-btn">
+                            <ion-icon name="grid-outline"></ion-icon>
+                        </div>
+                        <div class="f-icon icon-list" id="list-icon-btn">
+                            <ion-icon name="list-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-7-blog pt-4" id="grid-products">
+    
+                    <div class="products-box b-white">
+                        <div>
+                            <a href="detail.html" class="img-a">
+                                <img src="{% static 'web/assets/img/byhouse/product/house6.jpg' %}" alt="">
+                            </a> 
+                            <div class="product-about">
+                                <div class="product-title">
+                                    <a href="detail.html">Новостройка! Продается 2/4/9...</a>
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </div>
+                                <p class="product-price">16 800 UYE</p>
+                                <p class="product-address">Tashkent</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>                 
+                
+                <div id="list-products" class="wishlist-products-blog-list d-none">
+                    <div class="product-list-box">
+                        <div class="grid-div">
+                            <a href="detail.html" class="img-a">
+                                <img src="{% static 'web/assets/img/byhouse/product/house6.jpg' %}" alt="">
+                            </a> 
+                            <div class="product-about">
+                                <div class="product-about-child d-block">
+                                    <div class="product-title">
+                                        <a href="detail.html">Новостройка! Продается 2/4/9...</a>
+                                        <p class="product-price d-block text-right">27 000 UYE</p>
+                                    </div>  
+                                    <h5><ion-icon name="cash-outline"></ion-icon> 27 000 UYE</h5>
+                                    <p class="calendar"><img src="/assets/img/icon/ruller.png" alt=""> 110m <sup>2</sup></p>
+                                    <p class="speedometer"><img src="/assets/img/icon/architect.png" alt=""> 4 xona, 2 / 4 qavat</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="location"><ion-icon name="location-outline"></ion-icon> Tashkent</p>
+                                        <div class="heart-ion-icon text-right">
+                                            <ion-icon name="heart-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+  
+{% endblock content %}

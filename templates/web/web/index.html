@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baymarket</title>
+    <link rel="shortcut icon" href="" type="image/webp">
+
+    
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/default.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/fontawesom.css' %}">
+
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/owl/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/owl/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/scss/style.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/scss/style.css.map' %}">
+</head>
+<body>
+    
+    <div id="menu-katalog" class="menu-katalog">
+        <div class="menu-blog">
+            <div class="menu-blog-nav">
+                <div class="container">
+                    <div class="nav-logo">
+                        <img src="{% static 'web/assets/img/logo/logo.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="menu-blog-body">
+                <div class="container">
+                    <div class="grid-father">
+                        <div class="mbb-box">
+                            <div class="mbb-box-img">
+                                <img src="{% static 'web/assets/img/baycar/element/baymarketbig.png' %}" alt="">
+                            </div>
+                            <h5>Bay Market</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatibus.</p>
+                            <a href="#." class="more-btn">Batafsil</a>
+                        </div>
+                        <div class="mbb-box">
+                            <div class="mbb-box-img">
+                                <img src="{% static 'web/assets/img/baycar/element/baycarbig.png' %}" alt="">
+                            </div>
+                            <h5>Bay Car</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatibus.</p>
+                            <a href="{% url 'web_bycar_index' %}" class="more-btn">Batafsil</a>
+                        </div>
+                        <div class="mbb-box">
+                            <div class="mbb-box-img">
+                                <img src="{% static 'web/assets/img/baycar/element/bayworkbig.png' %}" alt="">
+                            </div>
+                            <h5>Bay Work</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatibus.</p>
+                            <a href="#." class="more-btn">Batafsil</a>
+                        </div>
+                        <div class="mbb-box">
+                            <div class="mbb-box-img">
+                                <img src="{% static 'web/assets/img/baycar/element/bayhousebig.png' %}" alt="">
+                            </div>
+                            <h5>Bay House</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatibus.</p>
+                            <a href="{% url 'web_byhouse_index' %}" class="more-btn">Batafsil</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="menu-blog-mobile">
+                <div class="mb-about">
+                    <div class="nav-logo">
+                        <img src="{% static 'web/assets/img/logo/logo.png' %}" alt="">
+                    </div>
+                    <h4>Xushkelibsiz</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="mb-box">
+                    <div class="title-name">
+                        <a href="#.">
+                            <h5>Bay Market</h5>
+                            <p>3 456 E'lonlar</p>
+                        </a>
+                    </div>
+                    <div class="title-name-img">
+                        <a href="#.">
+                            <img src="{% static 'web/assets/img/baycar/element/baymarketsmall.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="mb-box">
+                    <div class="title-name">
+                        <a href="{% url 'web_bycar_index' %}">
+                            <h5>Bay Car</h5>
+                            <p>12 478 E'lonlar</p>
+                        </a>
+                    </div>
+                    <div class="title-name-img">
+                        <a href="{% url 'web_bycar_index' %}">
+                            <img src="{% static 'web/assets/img/baycar/element/baycarsmall.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="mb-box">
+                    <div class="title-name">
+                        <a href="#.">
+                            <h5>Bay Work</h5>
+                            <p>1 361 E'lonlar</p>
+                        </a>
+                    </div>
+                    <div class="title-name-img">
+                        <a href="">
+                            <img src="{% static 'web/assets/img/baycar/element/bayworksmall.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="mb-box">
+                    <div class="title-name">
+                        <a href="{% url 'web_byhouse_index' %}">
+                            <h5>Bay House</h5>
+                            <p>3 787 E'lonlar</p>
+                        </a>
+                    </div>
+                    <div class="title-name-img">
+                        <a href="{% url 'web_byhouse_index' %}">
+                            <img src="{% static 'web/assets/img/baycar/element/bayhousesmall.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'web/assets/js/vendor/jquery-3.5.0.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/bootstrap/propper.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/plugins/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/plugins/slick.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/plugins/nav-tool.js' %}"></script>
+    <script src="{% static 'web/assets/js/plugins/plugins.js' %}"></script>
+    <script src="{% static 'web/assets/js/owl/owl.carousel.js' %}"></script>
+    <script src="{% static 'web/assets/js/owl/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/main.js' %}"></script>
+
+</body>
+</html>

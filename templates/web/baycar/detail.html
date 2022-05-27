@@ -1,0 +1,376 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+    
+    <section id="showcase" class="showcase">
+        <div class="showcase-blog">
+            <div class="showcase-body pb-0">
+                <div class="container">
+                    <div class="category-menu">
+                        <div class="showcase-breadecrump">
+                            <p><span><a href="index.html">By Car</a></span> / <span><a href="{% url 'web_baycar_category' product.category.slug %}">{{ product.category.title_ru }}</a></span> / <span><a href="{% url 'web_baycar_subcategory' product.subcategory.slug %}">{{ product.subcategory.title_ru }}</a></span> / <span class="active"><a href="#.">{{ product.title_ru }}</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wrapper-detail">
+        <div class="wrapper-blog-detail">
+            <div class="container">
+                <div class="product-detail-content">
+                    <div class="product-detail-child">
+                        <div class="product-detail-wrap">
+
+                            <div class="product-detail-img">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="item-one" role="tabpanel" aria-labelledby="item-one-tab">
+                                        <div class="shop-details-img">
+                                            <img src="{{ product.img_full.url }}" alt="">
+                                        </div>
+                                    </div>
+                                    {% for p_img_full in product_image %}
+                                    <div class="tab-pane fade" id="item{{p_img_full.id}}" role="tabpanel" aria-labelledby="item-two-tab">
+                                        <div class="shop-details-img">
+                                            <img src="{{ p_img_full.img_full.url }}" alt="">
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="product-detail-nav">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" id="item-one-tab" data-toggle="tab" href="#item-one" role="tab" aria-controls="item-one" aria-selected="true"><img src="{{ product.img_min.url }}" alt=""></a>
+                                    </li>
+                                    {% for p_img_min in product_image %}
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="item-two-tab" data-toggle="tab" href="#item{{p_img_min.id}}" role="tab" aria-controls="item-two" aria-selected="false"><img src="{{ p_img_min.img_min.url }}" alt=""></a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-about">
+                            <div class="p-d-date">
+                                <p>Joylashtirildi bugun 21:22</p>
+                            </div>
+                            <div class="p-d-heart">
+                                <ion-icon name="heart-outline"></ion-icon>
+                            </div>
+                            <div class="p-d-title">
+                                <h5>{{ product.title_ru }}</h5>
+                            </div>
+                            <div class="p-d-price">
+                                <h4>{{ product.price }} So'm</h4>
+                                <h5>Kelishiladi</h5>
+                            </div>
+                            <div class="p-d-more">
+                                <h4>Xarakteristika</h4>
+                                <div class="p-d-grid">
+                                    <div class="p-d-child">
+                                        <p><span class="light-title">Yili:</span> <span class="bold">{{ product.year }}</span></p>
+                                        <p><span class="light-title">Probeg:</span> <span class="bold">{{ product.km }} km</span></p>
+                                        <p><span class="light-title">Dvigatel:</span> <span class="bold">{{ product.engine }}{% if product.oil %} (Gaz-Benzin) {% elif product.gass %} (Gaz) {% elif product.electr %} (Elektr) {% elif product.dizel %} (Salarka) {% endif %} </span></p>
+                                        <p><span class="light-title">Kuzov:</span> <span class="bold">{{ product.type }}</span></p>
+                                    </div>
+                                    <div class="p-d-child">
+                                        <p><span class="light-title">Tortish:</span> <span class="bold">{{product.drive_unit}}</span></p>
+                                        <p><span class="light-title">Uzatish qutisi:</span> <span class="bold">{{ product.transmission }}</span></p>
+                                        <p><span class="light-title">Rangi:</span> <span class="bold">{{ product.color }}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-d-description">
+                                <ul class="filter-accardion">
+                                    <li class="menu-item-has-children">
+                                        <p class="top-t">Batafsil</p>
+                                        <ul class="submenu">
+                                            <p>{{ product.description_ru }}</p>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="p-d-footer">
+                                <p>ID: 41240834</p>
+                                <p><ion-icon name="eye-outline"></ion-icon> Ko'rishlar: 137</p>
+                                <p style="color: #FF2E2E;"><a href="#."><ion-icon name="flag-outline" style="color: #FF2E2E;"></ion-icon>Shikoyat qilish</a></p>
+                            </div> 
+                        </div>
+
+                        <div class="product-detail-chat">
+                            <div class="user-blog">
+                                <div class="user-about">
+                                    <img src="/assets/img/baycar/element/user.png" alt="">
+                                    <div>
+                                        <p><strong>Akromova Umida</strong></p>
+                                        <p>Ro'yxatdan o'tgan sanasi 2020</p>
+                                        <p style="color: #8ca6b7">Online</p>
+                                    </div>
+                                </div>
+                                <div class="user-number">
+                                    <p><ion-icon name="call-sharp"></ion-icon> <span id="number-hide" class="hide">XXX XXX XXX</span><span id="number-show" class="show d-none">99 972 76 02</span></p>
+                                    <button id="number-show-hide" class="button-outline">Ko'rsatish</button>
+                                </div>
+                            </div>
+                            <div class="send-message">
+                                <textarea id="" cols="30" rows="6" placeholder="Xabaringgizni yuboring"></textarea>
+                            </div>
+                            <div class="chat-footer">
+                                <button class="btn-gradient">Yuborish</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-detail-child">
+                        <div class="product-detail-banner">
+                            <div class="b-user-blog">
+                                <h5>E'lon beruvchi</h5>
+                                <div class="b-user-about">
+                                    <img src="/assets/img/baycar/element/user.png" alt="">
+                                    <div>
+                                        <p><strong>Akromova Umida</strong></p>
+                                        <p>Ro'yxatdan o'tgan sanasi 2020</p>
+                                        <p style="color: #8ca6b7">Online</p>
+                                        <p><a href="#."><strong>Barcha E'lonlar</strong></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-user-blog">
+                                <div class="b-user-about">
+                                    <img style="border-radius: 0% !important;" src="/assets/img/baycar/element/map.png" alt="">
+                                    <div>
+                                        <p><strong>Tashkent</strong></p>
+                                        <p style="color: #8ca6b7">Mirzo Ulug'bek</p>    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <div id="wishlist" class="b-background">
+        <div class="container">
+
+            <div class="products-nav d-flex align-items-center justify-content-between">
+                <h3 class="p-nav-name">Sevimlilar</h3>
+                <div class="grid-list-filter">
+                    <div class="f-icon icon-grid active" id="grid-icon-btn">
+                        <ion-icon name="grid-outline"></ion-icon>
+                    </div>
+                    <div class="f-icon icon-list" id="list-icon-btn">
+                        <ion-icon name="list-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-7-blog pt-4" id="grid-products">
+
+                <div class="products-box b-white">
+                    <div>
+                        <a href="#." class="img-a">
+                            <img src="/assets/img/baycar/products/nexia1.png" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-title">
+                                <a href="#.">Chevrolet Nexia 2 DONC</a>
+                                <ion-icon name="heart-outline"></ion-icon>
+                            </div>
+                            <p class="product-price">16 800 UYE</p>
+                            <p class="product-address">Tashkent Yakkasaroy</p>
+                            <p class="product-date">Bugun 12:27</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-box b-white">
+                    <div>
+                        <a href="#." class="img-a">
+                            <img src="/assets/img/baycar/products/nexia8.jpg" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-title">
+                                <a href="#.">Chevrolet Nexia 2 DONC</a>
+                                <ion-icon name="heart-outline"></ion-icon>
+                            </div>
+                            <p class="product-price">16 800 UYE</p>
+                            <p class="product-address">Tashkent Yakkasaroy</p>
+                            <p class="product-date">Bugun 12:27</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-box b-white">
+                    <div>
+                        <a href="#." class="img-a">
+                            <img src="/assets/img/baycar/products/nexia3.png" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-title">
+                                <a href="#.">Chevrolet Nexia 2 DONC</a>
+                                <ion-icon name="heart-outline"></ion-icon>
+                            </div>
+                            <p class="product-price">16 800 UYE</p>
+                            <p class="product-address">Tashkent Yakkasaroy</p>
+                            <p class="product-date">Bugun 12:27</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-box b-white">
+                    <div>
+                        <a href="#." class="img-a">
+                            <img src="/assets/img/baycar/products/nexia4.png" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-title">
+                                <a href="#.">Chevrolet Nexia 2 DONC</a>
+                                <ion-icon name="heart-outline"></ion-icon>
+                            </div>
+                            <p class="product-price">16 800 UYE</p>
+                            <p class="product-address">Tashkent Yakkasaroy</p>
+                            <p class="product-date">Bugun 12:27</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-box b-white">
+                    <div>
+                        <a href="#." class="img-a">
+                            <img src="/assets/img/baycar/products/nexia4.png" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-title">
+                                <a href="#.">Chevrolet Nexia 2 DONC</a>
+                                <ion-icon name="heart" class="t-danger"></ion-icon>
+                            </div>
+                            <p class="product-price">16 800 UYE</p>
+                            <p class="product-address">Tashkent Yakkasaroy</p>
+                            <p class="product-date">Bugun 12:27</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-box b-white">
+                    <div>
+                        <a href="#." class="img-a">
+                            <img src="/assets/img/baycar/products/nexia1.png" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-title">
+                                <a href="#.">Chevrolet Nexia 2 DONC</a>
+                                <ion-icon name="heart-outline"></ion-icon>
+                            </div>
+                            <p class="product-price">16 800 UYE</p>
+                            <p class="product-address">Tashkent Yakkasaroy</p>
+                            <p class="product-date">Bugun 12:27</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>                 
+            
+            <div id="list-products" class="wishlist-products-blog-list d-none">
+                <div class="product-list-box">
+                    <div class="grid-div">
+                        <a href="detail.html" class="img-a">
+                            <img src="/assets/img/baycar/products/nexia5.jpg" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-about-child d-block">
+                                <div class="product-title">
+                                    <a href="detail.html">Chevrolet Nexia 2 DONC</a>
+                                    <p class="product-price d-block text-right">27 000 UYE</p>
+                                </div>
+                                <h5><ion-icon name="cash-outline"></ion-icon> 27 000 UYE</h5>
+                                <p class="calendar"><ion-icon name="calendar-clear-outline"></ion-icon> 2015</p>
+                                <p class="speedometer"><ion-icon name="speedometer-outline"></ion-icon> 167 000 km</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="location"><ion-icon name="location-outline"></ion-icon> Tashkent</p>
+                                    <div class="heart-ion-icon text-right">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-div">
+                        <a href="detail.html" class="img-a">
+                            <img src="/assets/img/baycar/products/nexia1.png" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-about-child d-block">
+                                <div class="product-title">
+                                    <a href="detail.html">Chevrolet Nexia 2 DONC</a>
+                                    <p class="product-price d-block text-right">34 000 UYE</p>
+                                </div>
+                                <h5><ion-icon name="cash-outline"></ion-icon> 34 000 UYE</h5>
+                                <p class="calendar"><ion-icon name="calendar-clear-outline"></ion-icon> 2015</p>
+                                <p class="speedometer"><ion-icon name="speedometer-outline"></ion-icon> 167 000 km</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="location"><ion-icon name="location-outline"></ion-icon> Tashkent</p>
+                                    <div class="heart-ion-icon text-right">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-div">
+                        <a href="detail.html" class="img-a">
+                            <img src="/assets/img/baycar/products/nexia2.png" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-about-child d-block">
+                                <div class="product-title">
+                                    <a href="detail.html">Chevrolet Nexia 2 DONC</a>
+                                    <p class="product-price d-block text-right">34 000 UYE</p>
+                                </div>
+                                <h5><ion-icon name="cash-outline"></ion-icon> 34 000 UYE</h5>
+                                <p class="calendar"><ion-icon name="calendar-clear-outline"></ion-icon> 2015</p>
+                                <p class="speedometer"><ion-icon name="speedometer-outline"></ion-icon> 167 000 km</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="location"><ion-icon name="location-outline"></ion-icon> Tashkent</p>
+                                    <div class="heart-ion-icon text-right">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-div">
+                        <a href="detail.html" class="img-a">
+                            <img src="/assets/img/baycar/products/nexia3.png" alt="">
+                        </a> 
+                        <div class="product-about">
+                            <div class="product-about-child d-block">
+                                <div class="product-title">
+                                    <a href="detail.html">Chevrolet Nexia 2 DONC</a>
+                                    <p class="product-price d-block text-right">34 000 UYE</p>
+                                </div>
+                                <h5><ion-icon name="cash-outline"></ion-icon> 34 000 UYE</h5>
+                                <p class="calendar"><ion-icon name="calendar-clear-outline"></ion-icon> 2015</p>
+                                <p class="speedometer"><ion-icon name="speedometer-outline"></ion-icon> 167 000 km</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="location"><ion-icon name="location-outline"></ion-icon> Tashkent</p>
+                                    <div class="heart-ion-icon text-right">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock content %}
+

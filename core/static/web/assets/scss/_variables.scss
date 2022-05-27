@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background-color: #f6f8fa;
+    color: #022b4a; }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  
+  img {
+    max-width: 100%;
+    height: auto; }
+  
+  a:focus,
+  input:focus,
+  textarea:focus,
+  button:focus {
+    text-decoration: none;
+    outline: none; }
+  
+  a:focus,
+  a:hover {
+    text-decoration: none; }
+  
+  i,
+  span,
+  a {
+    display: inline-block; }
+  
+  audio,
+  canvas,
+  iframe,
+  img,
+  svg,
+  video {
+    vertical-align: middle; }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    color: #1a2025;
+    margin: 0px; }
+  
+  h1 {
+    font-size: 48px; }
+  
+  h2 {
+    font-size: 36px; }
+  
+  h3 {
+    font-size: 28px; }
+  
+  h4 {
+    font-size: 22px; }
+  
+  h5 {
+    font-size: 18px; }
+  
+  h6 {
+    font-size: 16px; }
+  
+  ul, ol {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none; }
+  
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #022b4a;
+    margin: 0px; }
+  
+  a, button {
+    color: inherit;
+    display: inline-block;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer; }
+  
+  a, button, img, input {
+    outline: 0; }
+    a:focus, button:focus, img:focus, input:focus {
+      outline: 0; }
+  
+  a:focus {
+    color: inherit;
+    outline: none;
+    text-decoration: none; }
+  
+  a:hover {
+    text-decoration: none;
+    color: #07294D; }
+  
+  button, input[type="submit"] {
+    cursor: pointer; }
+
+
+  ion-icon {
+      font-size: 22px;
+      color: #8ca6b7;
+  }
+
+  @media(min-width: 1200px) {
+    .container {
+        width: 1300px !important;
+    }
+  }
+
+// Color  ##################################
+$dark-orange: #ff960c;        .b-dark-orange{background-color: $dark-orange};              .t-dark-orange{color: $dark-orange};                               
+$light-orange: #ffd166;       .b-light-orange{background-color: $light-orange};            .t-light-orange{color: $light-orange};                               
+$text: #022b4a;               .b-text{background-color: $text};                            .t-text{color: $text};           
+$dark-blue: #033c67;          .b-dark-blue{background-color: $dark-blue};                  .t-dark-blue{color: $dark-blue};                               
+$light-blue: #095e9e;         .b-light-blue{background-color: $light-blue};                .t-light-blue{color: $light-blue};                               
+$gray-dark: #8ca6b7;          .b-dark-grey{background-color: $gray-dark};                  .t-dark-grey{color: $gray-dark};                               
+$gray-light: #f5f5f5;         .b-light-grey{background-color: $gray-light};                .t-light-grey{color: $gray-light};                               
+$link: #0085ff;               .b-link{background-color: $link};                            .t-link{color: $link};                               
+$white: #fff;                 .b-white{background-color: $white};                          .t-white{color: $white};                               
+$backgound: #f6f8fa;          .b-background{background-color: $backgound};                 .t-background{color: $backgound};                               
+$stroke: #e4eff3;             .b-stroke{background-color: $stroke};                        .t-stroke{color: $stroke};                               
+$light-yellow: #fff346;       .b-yellow{background-color: $light-yellow};                  .t-yellow{color: $light-yellow};                               
+$primary: #033c67;            .b-primary{background-color: $primary};                      .t-primary{color: $primary};                               
+$och-havo: #e7f8ff;           .b-och-havo{background-color: $och-havo};                    .t-och-havo{color: $och-havo};                               
+$danger: #ff2e2e;			       .b-danger{background-color: $danger};                        .t-danger{color: $danger};                               
+$succes-green: #04d440;	     .b-green{background-color: $succes-green};                   .t-green{color: $succes-green};                               
+$attention: #ffb800;          .b-attention{background-color: $attention};                  .t-attention{color: $attention};                               
+$pink: #ff698d;               .b-pink{background-color: $pink};                            .t-pink{color: $pink};                               
+$light-blue-liner: #70a8ff;   .b-light-blue-l{background-color: $light-blue-liner};        .t-light-blue-l{color: $light-blue-liner};                               
+$dark-blue-liner: #5597fd;    .b-dark-blue-l{background-color: $dark-blue-liner};          .t-dark-blue-l{color: $dark-blue-liner};                               
+$dark-soft-liner: #abccff;    .b-dark-soft-l{background-color: $dark-soft-liner};          .t-dark-soft-l{color: $dark-soft-liner};                               
+$light-soft2-liner: #cae0ff;  .b-light-soft2-l{background-color: $light-soft2-liner};      .t-light-soft2-l{color: $light-soft2-liner};
+$dark-soft2-liner: #bcd8ff;   .b-dark-soft2-l{background-color: $dark-soft2-liner};        .t-dark-soft2-l{color: $dark-soft2-liner};   
+
+
+
+// Fonts
+$roboto: 'Roboto', sans-serif;
+
+
+
+
+
+// Responsive Variables
+$desktop: 'only screen and (min-width: 1400px)';
+$laptop: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$ms: '(max-width: 767px)';
+$min-ms:'(min-width: 767px)';
+$smx: '(max-width: 576px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$xs: 'only screen and (min-width: 412px) and (max-width: 567px)';
+$xsl: 'only screen and (min-width: 360px) and (max-width: 412px)';
+$xsn: 'only screen and (min-width: 320px) and (max-width: 412px)';
+$max-xsl: '(max-width: 412px)';
+$lsm: '(max-width: 375px)';
+$xsm: '(max-width: 360px)';
+
+
+// =============================================================
+// Button Class
+// =============================================================
+
+.button-outline {
+    border: 1px solid $text;
+    padding: 7px 20px;
+    font-weight: 600;
+    color: $text;
+    font-size: 15px;
+    background-color: transparent;
+    display: inline-block;  
+    border-radius: 8px;
+    transition: 0.7s;
+    &:hover {
+      border: 1px solid $succes-green;
+      color: $succes-green;
+    }
+}
+
+.btn-gradient {
+    border: none;
+    padding: 10px 30px;
+    font-weight: 600;
+    color: $white;
+    font-size: 15px;
+    background: linear-gradient(90deg, #033C67 0%, #0D6AA7 100%);
+    border-radius: 8px;
+    transition: 0.7s;
+    &:hover {
+      background: linear-gradient(90deg, #0D6AA7 0%, #033C67 100%);
+      transition: 0.7s;
+    }
+}
+
+.sh-filter-btn {
+    border: none;
+    padding: 7px 35px;
+    font-weight: 500;
+    color: $white;
+    font-size: 15px;
+    background: #033C67;
+    border-radius: 8px;
+    transition: 0.7s;
+}
+
+
+// Settings Class ###############################################
+
+.on-of-btn {
+  position: relative;
+  width: 45px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: $stroke;
+  cursor: pointer;
+  .r-box {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      top: 2px;
+      border-radius: 12px;
+      background-color: $white;
+      transition: 0.2s;
+  }
+  .l-box {
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 22px;
+      top: 2px;
+      border-radius: 12px;
+      background-color: $primary;
+      transition: 0.2s;
+  }
+}
+
+.owl-nav {
+  display: none;
+}
+
+.owl-dots {
+  display: none;
+}
+
+._opacity {
+  opacity: 100% !important;
+  transition: 1s;
+}
+
+.opacity_ {
+  opacity: 0% !important;
+  transition: 1s;
+}
+
+
+// Products animation 
+.products-animation-top {
+  opacity: 100% !important;
+  transition: 0.3s;
+  transform: translateY(0px) !important;
+}
+
+.products-animation-bottom {
+  opacity: 0%;
+  transition: 0.3s;
+  transform: translateY(200px);
+}
+
+
+.filter-btn {
+  margin: 20px 0px 0px  0px;
+  button {
+    border: none;
+    background-color: $primary;
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 7px;
+    color: #fff;
+  }
+} 
+
+
+
+// Loader
+#loader{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50vh;
+  left: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid $text;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+0% {
+  top: 36px;
+  left: 36px;
+  width: 0;
+  height: 0;
+  opacity: 1;
+}
+100% {
+  top: 0px;
+  left: 0px;
+  width: 72px;
+  height: 72px;
+  opacity: 0;
+}
+}
+
+
+// Succes modal
+
+.succes-modal {
+  border-radius: 12px;
+  .modal-header {
+    border: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .icon-succes {
+      color: $white;
+      color: #fff;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: $succes-green;
+      font-size: 28px;
+      font-weight: 600;
+      border: 2px solid $white;
+      position: absolute;
+      right: 41%;
+      top: -74%;
+    }
+  }
+
+    h4 {
+      color: $text;
+      padding: 18px 0px;
+      text-align: center;
+    }
+    p {
+      color: $text;
+      font-weight: 600;
+      text-align: center;
+    }
+
+  .modal-footer {
+    border: none;
+  }
+}
+
+.tra {
+  background-color: transparent !important;
+}

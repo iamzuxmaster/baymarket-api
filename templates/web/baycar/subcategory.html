@@ -1,0 +1,408 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+        <section id="showcase" class="showcase">
+            <div class="showcase-blog">
+                <div class="showcase-body">
+                    <div class="container">
+                        <div class="category-menu">
+                            <div class="showcase-breadecrump">
+                                <p><span><a href="{% url 'web_bycar_index' %}">By Car</a></span> / <span><a href="{% url 'web_baycar_category' subcategory.category.slug %}">{{ subcategory.category.title_ru }}</a></span> / <span class="active"><a href="#.">{{ subcategory.title_ru }}</a></span></p>
+                            </div>
+                            <h2 class="category-name">{{ subcategory.title_ru }}</h2>
+                            <div class="subcategory_slug d-none">{{ subcategory.slug }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="wrapper">
+            <div class="wrapper-blog">
+                <div class="container">
+                    <div class="products-content">
+                        <div class="product-content-child">
+                            <div id="left-filter" class="filter">
+                                <div class="filter-blog">
+                                    <div class="filter-header">
+                                        <div class="filter-name">
+                                            <h4>Saralash</h4>
+                                            <img src="/assets/img/baycar/element/filter.png" alt="">
+                                        </div>
+                                        <div class="widget">
+                                            <h5 class="widget-title">Narxi</h5>
+                                            <div class="price_filter">
+                                                <div id="slider-range"></div>
+                                                <div class="price_slider_amount">
+                                                    <span>Narxi :</span>
+                                                    
+                                                    <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+                                    </div>
+                                    <div class="filter-body">
+                                        <h5 class="f-name">Joylashuv</h5>
+                                        <ul class="filter-accardion">
+                                            <li class="menu-item-has-children">
+                                                <p>Viloyat</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Tashkent</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Andijon</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Namangan</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Farg'ona</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Buxoro</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Samarqand</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Jizzax</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Navoiy</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Qashqadaryo</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Surxandaryo</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Xorazm</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Sirdaryo</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="region" type="radio">
+                                                            <span class="marka-span">Qoraqalpog'iston Resp</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <hr class="mt-4">
+                                    </div>
+                                    <div class="filter-body">
+                                        <h5 class="f-name">Ma'lumot</h5>
+                                        <ul class="filter-accardion">
+                                            <li class="menu-item-has-children">
+                                                <p>Turi</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="marka" type="radio">
+                                                            <span class="marka-span">Chevrolet</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="marka" type="radio">
+                                                            <span class="marka-span">Audi</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="marka" type="radio">
+                                                            <span class="marka-span">BMW</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="marka" type="radio">
+                                                            <span class="marka-span">Tesla</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="marka" type="radio">
+                                                            <span class="marka-span">Hyundai</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="marka" type="radio">
+                                                            <span class="marka-span">Kia</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item-has-children">
+                                                <p>Holati</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="event" type="radio">
+                                                            <span class="marka-span">Yangi</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label for="">
+                                                            <input class="marka-radio" name="event" type="radio">
+                                                            <span class="marka-span">Minilgan</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <hr class="mt-4">
+                                    </div>
+                                    <div class="filter-body">
+                                        <h5 class="f-name">E'lon beruvchi</h5>
+                                        <ul class="filter-announcement">
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio" name="announcement" type="radio">
+                                                    <span class="marka-span">Egasi</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="">
+                                                    <input class="marka-radio" name="announcement" type="radio">
+                                                    <span class="marka-span">Korxona</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <hr class="mt-4">
+                                    </div>
+                                    <div class="filter-bottom">
+                                        <div class="filter-on-of">
+                                            <p>Avtosalon</p>
+                                            <label for="check">
+                                                <div class="on-of-btn">
+                                                    <div id="r-l-box" class="r-box"></div>
+                                                </div>
+                                                <input type="checkbox" class="d-none" id="check">
+                                            </label>
+                                        </div>
+                                        <div class="filter-on-of">
+                                            <p>B/u</p>
+                                            <label for="check">
+                                                <div class="on-of-btn">
+                                                    <div id="r-l-box" class="r-box"></div>
+                                                </div>
+                                                <input type="checkbox" class="d-none" id="check">
+                                            </label>
+                                        </div>  
+                                        <div class="filter-on-of">
+                                            <p>Ijara</p>
+                                            <label for="check">
+                                                <div class="on-of-btn">
+                                                    <div id="r-l-box" class="r-box"></div>
+                                                </div>
+                                                <input type="checkbox" class="d-none" id="check">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="filter-btn">
+                                        <button>Saralash</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content-child">
+                            <div class="products-nav">
+                                <h4 class="p-nav-name">Top E'lonlar</h4>
+                                <div class="grid-list-filter">
+                                    <div id="grid-icon-btn" class="f-icon icon-grid active">
+                                        <ion-icon name="grid-outline"></ion-icon>
+                                    </div>
+                                    <div id="list-icon-btn" class="f-icon icon-list">
+                                        <ion-icon name="list-outline"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="root" class="products">
+                                <div v-show="loader" id="loader" style="z-index: 99999;">
+                                    <div class="lds-ripple"><div></div><div></div></div>
+                                </div>
+                                <div v-show="pro_content">
+                                    <!-- Products Grid =================================== -->
+                                    <div id="grid-products" class="products-blog">
+                                        <div class="products-box" v-for="product in products">
+                                            <div>
+                                                <a :href="[[ product.link ]]" class="img-a">
+                                                    <img :src="product.img_min" alt="">
+                                                </a> 
+                                                <div class="product-about">
+                                                    <div class="product-title">
+                                                        <a :href="[[ product.link ]]">[[ product.title ]]</a>
+                                                        <ion-icon name="heart-outline"></ion-icon>
+                                                    </div>
+                                                <p class="product-price">[[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></p>
+                                                    <p class="product-address">[[ product.district ]]</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- Productsc List ================================   -->
+                                    <div id="list-products" class="products-blog-list d-none">
+                                        <div class="product-list-box">
+                                            
+                                            <div class="grid-div" v-for="product in products">
+                                                <a :href="[[ product.link ]]" class="img-a">
+                                                    <img :src="product.img_min" alt="">
+                                                </a> 
+                                                <div class="product-about">
+                                                    <div class="product-about-child d-block">
+                                                        <div class="product-title">
+                                                            <a :href="[[ product.link ]]">[[ product.title ]]</a>
+                                                            <p class="product-price d-block text-right">[[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></p>
+                                                        </div>
+                                                        <h5><ion-icon name="cash-outline"></ion-icon> [[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></h5>
+                                                        <p class="calendar"><ion-icon name="calendar-clear-outline"></ion-icon>[[ product.year ]]</p>
+                                                        <p class="speedometer"><ion-icon name="speedometer-outline"></ion-icon>[[ product.km ]] km</p>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <p class="location"><ion-icon name="location-outline"></ion-icon>[[ product.region ]]</p>
+                                                            <div class="heart-ion-icon text-right">
+                                                                <ion-icon name="heart-outline"></ion-icon>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+{% endblock content %}
+
+{% block bycarvue %}
+
+    <script>
+
+        Vue.config.ignoredElements = [/^ion-/]
+        let app = new Vue ({
+            delimiters: [ '[[', ']]'],
+            el: '#root',    
+            data: {
+                loader: true,
+                pro_content: false,
+                subcategory: [],
+                products: [],
+            },
+            mounted() {
+                let slug = document.querySelector('.subcategory_slug')
+                fetch('/baycar/subcategory/detail/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify({
+                        slug: slug.innerText,
+                      })
+                    })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.code == 200) {
+                            this.loader = false
+                            this.pro_content = true
+                            this.subcategory = data['subcategory']
+                            this.products = data['products']
+                        }
+                })
+            },
+
+            methods: {
+            }
+            })
+
+        // ################# List Grid Products #######################
+        if(document.querySelector('#grid-products')) {
+            let grid_btn = document.querySelector('#grid-icon-btn')
+            let list_btn = document.querySelector('#list-icon-btn')
+            let grid_products = document.querySelector('#grid-products')
+            let list_products = document.querySelector('#list-products')
+
+            grid_btn.addEventListener('click', () => {
+                grid_products.classList.remove('d-none')
+                grid_btn.classList.add('active')
+                setTimeout(function() {
+                    grid_products.classList.add('products-animation-top')
+                }, 400 );
+                setTimeout(function() {
+                    list_products.classList.add('d-none')
+                }, 400 );
+                list_products.classList.remove('products-animation-top')
+                list_products.classList.add('products-animation-bottom')
+                list_btn.classList.remove('active')
+            }) 
+
+            list_btn.addEventListener('click', () => {
+                list_products.classList.remove('d-none')
+                list_btn.classList.add('active')
+                setTimeout(function() {
+                    list_products.classList.add('products-animation-top')
+                }, 400 );
+                setTimeout(function() {
+                    grid_products.classList.add('d-none')
+                }, 400 );
+                grid_products.classList.remove('products-animation-top')
+                grid_products.classList.add('products-animation-bottom')
+                grid_btn.classList.remove('active')
+            }) 
+            
+        }
+    
+    </script>
+
+{% endblock bycarvue %}

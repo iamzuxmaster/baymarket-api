@@ -44,8 +44,6 @@ class Category(models.Model):
         return subcategories
 
 
-
-
 class SubCategory(models.Model): 
     img = ResizedImageField(size=[600,600], quality=100, upload_to="baymarket/categories/")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
@@ -88,7 +86,6 @@ class ProductMarka(models.Model):
         return count
 
 
-
 class ProductType(models.Model):
     title = models.CharField(max_length=200)
 
@@ -101,7 +98,6 @@ class ProductType(models.Model):
         return count
 
 
-
 class ProductTransmission(models.Model):
     title = models.CharField(max_length=200)
 
@@ -112,7 +108,6 @@ class ProductTransmission(models.Model):
     def total_products(self):
         count = Product.objects.filter(transmission=self, drop=False, verified=True).count()
         return count
-
 
 
 class ProductColor(models.Model):
@@ -157,6 +152,7 @@ class Product(models.Model):
     electr = models.BooleanField(default=False)
     dollar = models.BooleanField(default=False)
     sum = models.BooleanField(default=False)
+    engine = models.CharField(max_length=255, null=True, blank=True)
     arr = [
         ("orqa", "orqa"),
         ("oldi", "oldi"),
@@ -186,7 +182,6 @@ class Product(models.Model):
         return discount
 
 
-
 class ProductImage(models.Model): 
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     img_min = ResizedImageField(size=[300,300], quality=100, upload_to="web/products/300x300/")
@@ -194,7 +189,7 @@ class ProductImage(models.Model):
 
 
     def __str__(self):
-        return f"Фото: {self.product.title}"
+        return f"Фото: {self.product}"
 
 
     class Meta: 

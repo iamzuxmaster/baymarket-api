@@ -95,7 +95,6 @@ STATIC_ROOT = 'static'
 STATICFILES_DIRS = [
     BASE_DIR / "core/static"
 ]
-
-
+CSRF_COOKIE_SECURE = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

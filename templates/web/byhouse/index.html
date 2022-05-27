@@ -1,0 +1,702 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+    
+<div id="root">
+
+    <section id="showcase" class="showcase">
+        <div class="showcase-blog">
+            <div class="showcase-body">
+                <div class="container">
+                    <div class="category-menu">
+                        <div class="showcase-breadecrump">
+                            <p><span class="active"><a href="index.html">By House</a></p>
+                        </div>
+                        <h2 class="category-name">By house</h2>
+                        <div class="showcase-filter">
+                            <div class="sh-filter-card">
+                                <h5>Uyni olish turi</h5>
+                                <label>
+                                    <input class="marka-radio house-rent" data-rent="Ijaraga" name="rent"  type="radio">
+                                    <span class="marka-span">Ijaraga olish</span>
+                                </label>
+                                <label>
+                                    <input class="marka-radio house-rent" data-rent="Sotib olish" name="rent" type="radio">
+                                    <span class="marka-span">Sotib olish</span>
+                                </label>
+                            </div>
+                            <div class="sh-filter">
+                                <h5>Qanday uy qidiryapsiz ?</h5>
+                                <div class="sh-filter-blog">
+                                    <div class="filter-section">
+                                        <ul class="filter-accardion">
+                                            <li class="menu-item-has-children">
+                                                <p class="top-t">Turi</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <label v-for="type in types">
+                                                            <input class="marka-radio house-top-type" :data-toptype="[[ type.title ]]" name="type-house" type="radio">
+                                                            <span class="marka-span">[[ type.title ]]</span>
+                                                        </label>      
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-section">
+                                        <ul class="filter-accardion">
+                                            <li class="menu-item-has-children">
+                                                <p class="top-t">Muddati</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <label>
+                                                            <input class="marka-radio house-lifetime" name="lifetime" data-lifetime="kunlik" type="radio">
+                                                            <span class="marka-span">Kunlik</span>
+                                                        </label>
+                                                        <label>
+                                                            <input class="marka-radio house-lifetime" name="lifetime" data-lifetime="uzoqmuddatga" type="radio">
+                                                            <span class="marka-span">Uzoq muddatga</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-section">
+                                        <ul class="filter-accardion">
+                                            <li id="filter-input" class="menu-item-has-children">
+                                                <p class="top-t">Xonalar</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <input type="number" id="top-minRoom" placeholder="Xonadan">
+                                                        <input type="number" id="to-maxRoom" placeholder="Xonagacha">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="filter-section">
+                                        <ul class="filter-accardion">
+                                            <li id="filter-input" class="menu-item-has-children">
+                                                <p class="top-t">Narixi</p>
+                                                <ul class="submenu">
+                                                    <li>
+                                                        <input type="number" id="top-minPrice" placeholder="Qanchadan">
+                                                        <input type="number" id="top-maxPrice" placeholder="Qanchagacha">
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button @click="topfilter" class="sh-filter-btn">Saralash</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wrapper">
+        <div class="wrapper-blog">
+            <div class="container">
+                <div class="products-content">
+                    <div class="product-content-child">
+                        <div id="left-filter" class="filter">
+                            <div class="filter-blog">
+                                <div class="filter-header">
+                                    <div class="filter-name">
+                                        <h4>Saralash</h4>
+                                        <img src="{% static 'web/assets/img/baycar/element/filter.png' %}" alt="">
+                                    </div>
+                                    <div class="filter-body">
+                                        <ul class="filter-accardion">
+                                            <li class="menu-item-has-children prp">
+                                                <p>Narxi</p> 
+                                                <ul class="submenu sub_price_type">
+                                                    <li class="left-filter-input">
+                                                        <input id="minPrice" type="number" placeholder="Narxdan"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 10) {this.value = ''}">
+                                                        <input id="maxPrice" type="number" placeholder="Narxgacha" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 15) {this.value = ''}">
+                                                    </li>
+                                                    <div class="left-select-price">
+                                                        <select id="price_typed" name="">
+                                                            <option value="uzs">uzs</option>
+                                                            <option value="y.e">y.e</option>
+                                                        </select>
+                                                    </div>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <hr>
+                                    </div>
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">Joylashuv</h5>
+                                    <ul class="filter-accardion">
+                                        <li class="menu-item-has-children">
+                                            <p>Viloyat</p>
+                                            <ul class="submenu">
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Tashkent" name="region" type="radio">
+                                                        <span class="marka-span">Tashkent</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Andijon" name="region" type="radio">
+                                                        <span class="marka-span">Andijon</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Namangan" name="region" type="radio">
+                                                        <span class="marka-span">Namangan</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Farg'ona" name="region" type="radio">
+                                                        <span class="marka-span">Farg'ona</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Buxoro" name="region" type="radio">
+                                                        <span class="marka-span">Buxoro</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Samarqand" name="region" type="radio">
+                                                        <span class="marka-span">Samarqand</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Jizzax" name="region" type="radio">
+                                                        <span class="marka-span">Jizzax</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Navoiy" name="region" type="radio">
+                                                        <span class="marka-span">Navoiy</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Qashqadaryo" name="region" type="radio">
+                                                        <span class="marka-span">Qashqadaryo</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" data-region="Surxandaryo" name="region" type="radio">
+                                                        <span class="marka-span">Surxandaryo</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" name="region" data-region="Xorazm" type="radio">
+                                                        <span class="marka-span">Xorazm</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" name="region" data-region="Sirdaryo" type="radio">
+                                                        <span class="marka-span">Sirdaryo</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio region-checked" name="region" data-region="Qoraqalpog'iston" type="radio">
+                                                        <span class="marka-span">Qoraqalpog'iston Resp</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">Ma'lumot</h5>
+                                    <ul class="filter-accardion">
+                                        <li class="menu-item-has-children">
+                                            <p>Turi</p>
+                                            <ul class="submenu">
+                                                <li v-for="type in types">
+                                                    <label for="">
+                                                        <input class="marka-radio house-type" name="house-type" :data-type="[[ type.title ]]" type="radio">
+                                                        <span class="marka-span">[[ type.title ]]</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <p>Xonalar</p>
+                                            <ul class="submenu">
+                                                <li class="left-filter-input">
+                                                    <input type="number" id="minRoom" placeholder="Xonadan">
+                                                    <input type="number" id="maxRoom" placeholder="Xonagacha">
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <p>Holati</p>
+                                            <ul class="submenu">
+                                                <li v-for="condition in conditions">
+                                                    <label for="">
+                                                        <input class="marka-radio house-condition" name="condition" :data-condition="[[ condition.title ]]" type="radio">
+                                                        <span class="marka-span">[[ condition.title ]]</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <p>Bino Asosi</p>
+                                            <ul class="submenu">
+                                                <li v-for="material in materials">
+                                                    <label>
+                                                        <input class="marka-radio house-material" name="material" :data-material="[[ material.title ]]" type="radio">
+                                                        <span class="marka-span">[[ material.title ]]</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <p>Qavati</p>
+                                            <ul class="submenu">
+                                                <li class="left-filter-input">
+                                                    <input id="storeys" type="number" placeholder="Qavati"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 2) {this.value = ''}">
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">E'lon beruvchi</h5>
+                                    <ul class="filter-announcement">
+                                        <li>
+                                            <label for="">
+                                                <input class="marka-radio house-announcement" name="has" data-announcement="Egasi" type="radio">
+                                                <span class="marka-span">Egasi</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="">
+                                                <input class="marka-radio house-announcement" name="has" data-announcement="Korxona" type="radio">
+                                                <span class="marka-span">Korxona</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">Jixozlangan</h5>
+                                    <ul class="filter-announcement">
+                                        <li>
+                                            <label for="">
+                                                <input class="marka-radio  house-equipped" name="equipped" data-equipped="xa" type="radio">
+                                                <span class="marka-span">Xa</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="">
+                                                <input class="marka-radio house-equipped" name="equipped" data-equipped="yoq" type="radio">
+                                                <span class="marka-span">Yoq</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="filter-btn">
+                                    <button @click="filter">Saralash</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-content-child">
+                        <div class="products-nav">
+                            <h4 class="p-nav-name">Top E'lonlar</h4>
+                            <div class="grid-list-filter">
+                                <div id="grid-icon-btn" class="f-icon icon-grid active">
+                                    <ion-icon name="grid-outline"></ion-icon>
+                                </div>
+                                <div id="list-icon-btn" class="f-icon icon-list">
+                                    <ion-icon name="list-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="products">
+                            <div v-show="loader" id="loader" style="z-index: 99999;">
+                                <div class="lds-ripple"><div></div><div></div></div>
+                            </div>
+                            <div v-show="pro_content">
+                                <!-- Products Grid =================================== -->
+                                <div id="grid-products" class="products-blog">
+
+                                    <div class="products-box" v-for="product in products">
+                                        <div>
+                                            <a href="{% url 'web_byhouse_detail' %}" class="img-a">
+                                                <img :src="product.img_min" alt="">
+                                            </a> 
+                                            <div class="product-about">
+                                                <div class="product-title">
+                                                    <a href="{% url 'web_byhouse_detail' %}">[[ product.title ]]</a>
+                                                    <ion-icon name="heart-outline"></ion-icon>
+                                                </div>
+                                            <p class="product-price">[[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></p>
+                                                <p class="product-address">[[ product.region ]]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Productsc List ================================   -->
+                                <div id="list-products" class="products-blog-list d-none">
+                                    <div class="product-list-box">
+                                        <div class="grid-div" v-for="product in products">
+                                            <a href="{% url 'web_byhouse_detail' %}" class="img-a">
+                                                <img :src="product.img_min" alt="">
+                                            </a> 
+                                            <div class="product-about">
+                                                <div class="product-about-child d-block">
+                                                    <div class="product-title">
+                                                        <a href="{% url 'web_byhouse_detail' %}">[[ product.title ]]</a>
+                                                        <p class="product-price d-block text-right">[[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></p>
+                                                    </div>  
+                                                    <h5><ion-icon name="cash-outline"></ion-icon> [[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></h5>
+                                                    <p class="calendar"><img src="{% static 'web/assets/img/icon/ruller.png' %}" alt="">[[ product.area ]]  m <sup>2</sup></p>
+                                                    <p class="speedometer"><img src="{% static 'web/assets/img/icon/architect.png' %}" alt=""> [[ product.rooms ]] xona, [[ product.storeys ]] qavat</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="location"><ion-icon name="location-outline"></ion-icon>[[ product.region ]]</p>
+                                                        <div class="heart-ion-icon text-right">
+                                                            <ion-icon name="heart-outline"></ion-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    
+{% endblock content %}
+
+{% block bycarvue %}
+    <script>
+        Vue.config.ignoredElements = [/^ion-/]
+        let app = new Vue ({
+            delimiters: [ '[[', ']]'],
+            el: '#root',     
+            data: {
+                loader: true,
+                pro_content: false,
+                categories: [],
+                types: [],
+                subcategories: [],
+                conditions: [],
+                materials: [],
+                products: [],
+
+                // Filter 
+                minPrice: '',
+                maxPrice: '',
+                price_type: '',
+                region: '',
+                type: '',
+                rent: '',
+                minRoom: '',
+                maxRoom: '',
+                lifetime: '',
+                condition: '',
+                material: '',
+                storeys: '',
+                announcement: '',
+                equipped: ''
+            },
+            mounted() {
+                fetch('bayhouse/init/ru/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.code == 200) {
+                            this.loader = false
+                            this.pro_content = true
+                            this.categories = data['categories']
+                            this.subcategories = data['subcategories']
+                            this.types = data['types']
+                            this.products = data['products']
+                            this.conditions = data['conditions']
+                            this.materials = data['materials']
+                            console.log(this.products);
+                        }
+                })
+            },
+
+            methods: {
+                
+                topfilter() {
+                    if($('.region-checked')) {
+
+                        $('.house-rent').each((index, rent) => {
+                            if(rent.checked){
+                                this.rent = rent.dataset.rent
+                            }
+                        })                        
+                        
+
+                        $('.house-top-type').each((index, ty) => {
+                            if(ty.checked){
+                                this.type = ty.dataset.toptype
+                            }
+                        })                        
+                        
+                        $('.house-lifetime').each((index, lf) => {
+                            if(lf.checked){
+                                this.lifetime = lf.dataset.lifetime
+                            }
+                        })
+
+                        this.minRoom = $('#top-minRoom').value
+                        this.maxRoom = $('#top-maxRoom').value
+
+                        this.minPrice = $('#top-minPrice').value
+                        this.maxPrice = $('#top-maxPrice').value
+
+                        fetch('', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': csrfToken
+                            }, 
+                            body: JSON.stringify({
+                                minPrice: this.minPrice,
+                                maxPrice: this.maxPrice,
+                                price_type: this.price_type,
+                                type: this.type,
+                                minRoom: this.minRoom,
+                                maxRoom: this.maxRoom,
+                                lifetime: this.lifetime
+                            })
+                        })
+                            .then(resp => resp.json())
+                            .then(data => {
+                                if (data.code == 200) {
+                                }
+                        })
+
+                    }
+                },
+                
+            
+                filter() {
+
+                if(document.querySelectorAll('.region-checked')) {
+                    let minPrice = document.querySelector('#minPrice')
+                    let maxPrice = document.querySelector('#maxPrice')
+                    let price_type = document.querySelector('#price_typed')
+                    let region = document.querySelectorAll('.region-checked')
+                    let type = document.querySelectorAll('.house-type')
+                    let minRoom = document.querySelector('#minRoom')
+                    let maxRoom = document.querySelector('#maxRoom')
+                    let condition = document.querySelectorAll('.house-condition')
+                    let material = document.querySelectorAll('.house-material')
+                    let storeys = document.querySelector('#storeys')
+                    let announcement = document.querySelectorAll('.house-announcement')
+                    let equipped = document.querySelectorAll('.house-equipped')
+                    
+
+                    this.price_type = price_type.value
+                    this.minPrice = minPrice.value
+                    this.maxPrice = maxPrice.value
+
+                    region.forEach(r => {
+                        if(r.checked){
+                            this.region = r.dataset.region
+                        }
+                    })
+                            
+                    type.forEach(t => {
+                        if(t.checked){
+                            this.type = t.dataset.type
+                        }
+                    })
+                                                
+                    this.minRoom = minRoom.value
+                    this.maxRoom = maxRoom.value
+                                                
+                    condition.forEach(c => {
+                        if(c.checked){
+                            this.condition = c.dataset.condition
+                        }
+                    })
+            
+                    material.forEach(m => {
+                        if(m.checked){
+                            this.material = m.dataset.material
+                        }
+                    })
+
+                    this.storeys = storeys.value
+    
+                    announcement.forEach(a => {
+                        if(a.checked){
+                            this.announcement = a.dataset.announcement
+                        }
+                    })
+
+                    equipped.forEach(e => {
+                        if(e.checked){
+                            this.equipped = e.dataset.equipped
+                        }
+                    })
+                    
+                }
+
+                fetch('', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    }, 
+                    body: JSON.stringify({
+                        minPrice: this.minPrice,
+                        maxPrice: this.maxPrice,
+                        price_type: this.price_type,
+                        region: this.region,
+                        type: this.type,
+                        minRoom: this.minRoom,
+                        maxRoom: this.maxRoom,
+                        condition: this.condition,
+                        material: this.material,
+                        storeys: this.storeys,
+                        announcement: this.announcement,
+                        equipped: this.equipped,
+                        })
+                    })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.code == 200) {
+                        }
+                })
+            }
+                
+            },
+
+            })
+
+        // ################# List Grid Products #######################
+        if(document.querySelector('#grid-products')) {
+            let grid_btn = document.querySelector('#grid-icon-btn')
+            let list_btn = document.querySelector('#list-icon-btn')
+            let grid_products = document.querySelector('#grid-products')
+            let list_products = document.querySelector('#list-products')
+
+            grid_btn.addEventListener('click', () => {
+                grid_products.classList.remove('d-none')
+                grid_btn.classList.add('active')
+                setTimeout(function() {
+                    grid_products.classList.add('products-animation-top')
+                }, 400 );
+                setTimeout(function() {
+                    list_products.classList.add('d-none')
+                }, 400 );
+                list_products.classList.remove('products-animation-top')
+                list_products.classList.add('products-animation-bottom')
+                list_btn.classList.remove('active')
+            }) 
+
+            list_btn.addEventListener('click', () => {
+                list_products.classList.remove('d-none')
+                list_btn.classList.add('active')
+                setTimeout(function() {
+                    list_products.classList.add('products-animation-top')
+                }, 400 );
+                setTimeout(function() {
+                    grid_products.classList.add('d-none')
+                }, 400 );
+                grid_products.classList.remove('products-animation-top')
+                grid_products.classList.add('products-animation-bottom')
+                grid_btn.classList.remove('active')
+            }) 
+            
+        }
+
+    </script>
+
+    <!-- ##################### Main js ###################### -->
+    <script>
+        
+        // Slider Price Left
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 700,
+            values: [0, 700],
+            slide: function (event, ui) {
+                $("#amount").val("" + ui.values[0] + " - " + ui.values[1]);
+            }
+        });
+        $("#amount").val("" + $("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+        
+        // Slider Price Modal
+        $("#slider-range2").slider({
+            range: true,
+            min: 0,
+            max: 700,
+            values: [0, 700],
+            slide: function (event, ui) {
+                $("#amount2").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            }
+        });
+        $("#amount2").val("$" + $("#slider-range2").slider("values", 0) + " - $" + $("#slider-range2").slider("values", 1));
+        
+        //Filter Dropown Toggle
+        if ($('.filter-accardion li.menu-item-has-children ul').length) {
+            $('.filter-accardion li.menu-item-has-children').append('<div class="dropdown-btn"><ion-icon name="chevron-down-outline"></ion-icon></div>');
+
+        }
+
+        // Filter Accardion
+        if ($('.filter-accardion').length) {
+
+            //Dropdown Button
+            $('.filter-accardion li.menu-item-has-children .dropdown-btn').on('click', function () {
+                $(this).toggleClass('open');
+                $(this).prev('ul').slideToggle(500);
+            });
+        }
+
+        // On of Btn
+        if (document.querySelectorAll('.on-of-btn')) {
+            let change_label = document.querySelectorAll('.on-of-btn')
+            let box = document.querySelectorAll('#r-l-box')
+            change_label.forEach((ch_b, index) => {
+                ch_b.addEventListener('click', () => {
+                        if(box[index].classList.value.includes('r-box')) {
+                            box[index].classList.replace('r-box', 'l-box')
+                        } else {
+                            box[index].classList.replace('l-box', 'r-box')
+                        }
+                })
+            })
+        
+        }
+    </script>
+{% endblock bycarvue %}

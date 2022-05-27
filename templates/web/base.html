@@ -1,0 +1,827 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baymarket</title>
+    <link rel="shortcut icon" href="" type="image/webp">
+
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/default.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/fontawesom.css' %}">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+    <link rel="stylesheet" href="{% static 'web/assets/css/plugins/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/owl/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/owl/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/scss/style.css' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/scss/style.css.map' %}">
+    <link rel="stylesheet" href="{% static 'web/assets/css/style.css' %}">
+    <script src="{% static 'web/assets/js/vendor/jquery-3.5.0.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/csrf_token.js' %}"></script>
+    <script src="{% static 'web/assets/js/vue.js/vue.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+</head>
+<body>
+    <div>
+        {% csrf_token %}
+        <div id="menu-katalog" class="menu-katalog d-none opacity_">
+
+            <div class="menu-blog">
+                <div class="menu-blog-nav">
+                    <div class="container">
+                        <div class="nav-logo" id="nav-logo">
+                            <img src="{% static 'web/assets/img/logo/logo.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-blog-body">
+                    <div class="container">
+                        <div class="grid-father">
+                            <div class="mbb-box">
+                                <div class="mbb-box-img">
+                                    <img src="{% static 'web/assets/img/baycar/element/baymarketbig.png' %}" alt="">
+                                </div>
+                                <h5>Bay Market</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatibus.</p>
+                                <a href="#." class="more-btn">Batafsil</a>
+                            </div>
+                            <div class="mbb-box">
+                                <div class="mbb-box-img">
+                                    <img src="{% static 'web/assets/img/baycar/element/baycarbig.png' %}" alt="">
+                                </div>
+                                <h5>Bay Car</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatibus.</p>
+                                <a href="{% url 'web_bycar_index' %}" class="more-btn">Batafsil</a>
+                            </div>
+                            <div class="mbb-box">
+                                <div class="mbb-box-img">
+                                    <img src="{% static 'web/assets/img/baycar/element/bayworkbig.png' %}" alt="">
+                                </div>
+                                <h5>Bay Work</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatibus.</p>
+                                <a href="#." class="more-btn">Batafsil</a>
+                            </div>
+                            <div class="mbb-box">
+                                <div class="mbb-box-img">
+                                    <img src="{% static 'web/assets/img/baycar/element/bayhousebig.png' %}" alt="">
+                                </div>
+                                <h5>Bay House</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptatibus.</p>
+                                <a href="{% url 'web_byhouse_index' %}" class="more-btn">Batafsil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="menu-blog-mobile">
+                    <div class="mb-about">
+                        <div class="nav-logo" id="nav-logo">
+                            <img src="{% static 'web/assets/img/logo/logo.png' %}" alt="">
+                        </div>
+                        <h4>Xushkelibsiz</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="mb-box">
+                        <div class="title-name">
+                            <a href="#.">
+                                <h5>Bay Market</h5>
+                                <p>3 456 E'lonlar</p>
+                            </a>
+                        </div>
+                        <div class="title-name-img">
+                            <a href="#.">
+                                <img src="{% static 'web/assets/img/baycar/element/baymarketsmall.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mb-box">
+                        <div class="title-name">
+                            <a href="{% url 'web_bycar_index' %}">
+                                <h5>Bay Car</h5>
+                                <p>12 478 E'lonlar</p>
+                            </a>
+                        </div>
+                        <div class="title-name-img">
+                            <a href="{% url 'web_bycar_index' %}">
+                                <img src="{% static 'web/assets/img/baycar/element/baycarsmall.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mb-box">
+                        <div class="title-name">
+                            <a href="#.">
+                                <h5>Bay Work</h5>
+                                <p>1 361 E'lonlar</p>
+                            </a>
+                        </div>
+                        <div class="title-name-img">
+                            <a href="">
+                                <img src="{% static 'web/assets/img/baycar/element/bayworksmall.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mb-box">
+                        <div class="title-name">
+                            <a href="{% url 'web_byhouse_index' %}">
+                                <h5>Bay House</h5>
+                                <p>3 787 E'lonlar</p>
+                            </a>
+                        </div>
+                        <div class="title-name-img">
+                            <a href="{% url 'web_byhouse_index' %}">
+                                <img src="{% static 'web/assets/img/baycar/element/bayhousesmall.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <main id="page">
+            
+            <div id="navigation" class="navigation">
+                <div class="container">
+                    <div class="nav-grid">
+                        <div class="nav-grid-child ">
+                            <div class="nav-logo">
+                                <a href="{% url 'web_bycar_index' %}">
+                                    <img src="{% static 'web/assets/img/logo/logo.png' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+        
+                        <div class="nav-grid-child nav-search">
+                                <div>
+                                    <div class="nav-catalog-btn" id="katalog-btn">
+                                        <ion-icon name="menu-outline"></ion-icon>
+                                        <p>Katalog</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="search-bar">
+                                        <input type="text">
+                                        <ion-icon class="s-r-i" name="close-outline"></ion-icon>
+                                        <button type="submit">Qidiruv</button>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                        <div class="nav-grid-child ">
+                            <div class="nav-menu">
+                                <div class="nav-icon text-center">
+                                    <a href="wishlist.html" data-toggle="modal" data-target="#login">
+                                        <ion-icon name="heart-outline"></ion-icon>
+                                        <p>Sevimlilar</p>
+                                        {{ request.user.is_authenticated }}
+                                    </a>
+                                </div>
+        
+                                <div class="nav-icon text-center">
+                                    <a href="{% url 'web_announcement' %}">
+                                        <ion-icon name="duplicate-outline"></ion-icon>
+                                        <p>E'lon berish</p>
+                                    </a>
+                                </div>
+        
+                                <div class="nav-icon text-center">
+                                    <a href="chat.html">
+                                        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                                        <p>Xabarlar</p>
+                                    </a>
+                                </div>
+        
+                                <div class="nav-icon text-center">
+                                    <a href="#.">
+                                        <ion-icon name="person-circle-outline"></ion-icon>
+                                        <p>Profil</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="nav-mobile">
+        
+                        <div class="nav-mobile-header">
+                            <div class="nav-mobile-child">
+                                <ion-icon name="person-circle-outline"></ion-icon>
+                            </div>                
+                            <div class="nav-mobile-child">
+                                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                            </div>
+                            <div class="nav-mobile-child">
+                                <div class="nav-mobile-logo" id="nav-logo">
+                                    <a href="index.html">
+                                        <img src="{% static 'web/assets/img/logo/logo.png' %}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="nav-mobile-child">
+                                <ion-icon name="heart-outline"></ion-icon>
+                            </div>                
+                            <div class="nav-mobile-child">
+                                <ion-icon name="duplicate-outline"></ion-icon>
+                            </div>
+                        </div>
+        
+                        <div class="nav-mobile-body">
+                            <div class="nav-mobile-child">
+                                <ion-icon name="menu-outline" id="katalog-btn"></ion-icon>
+                            </div>
+                            <div class="nav-mobile-child">
+                                <div class="search-bar">
+                                    <ion-icon name="search-outline"></ion-icon>
+                                    <input type="text" placeholder="Qidirish">
+                                </div>
+                            </div>
+                            <div class="nav-mobile-child">
+                                <button style="border: none; background: transparent;" data-toggle="modal" data-target="#filter-modal">
+                                    <img class="filter-icon" src="{% static 'web/assets/img/baycar/element/filter.png' %}" alt="">
+                                </button>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+
+            {% block content %}
+            
+            {% endblock content %}
+            
+            <section id="footer" class="footer">
+                <div class="footer-widget">
+                    <div class="container">
+                        <div class="footer-grid">
+                            <div class="footer-grid-child">
+                                <div class="footer-about">
+                                    <div class="nav-logo">
+                                        <img src="{% static 'web//assets/img/logo/logo.png' %}" alt="">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam aspernatur labore, sed incidunt necessitatibus! </p>
+                                </div>
+                            </div>
+                            <div class="footer-grid-child">
+                                <div class="footer-service-link">
+                                    <h4>Bizning xizmatlar</h4>
+                                    <ul>
+                                        <li><a href="#.">Bay Market</a></li>
+                                        <li><a href="#.">Bay Car</a></li>
+                                        <li><a href="#.">Bay Work</a></li>
+                                        <li><a href="#.">Bay House</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-grid-child">
+                                <div class="footer-service-link">
+                                    <h4>Legal</h4>
+                                    <ul>
+                                        <li><a href="#.">Privacy Policy</a></li>
+                                        <li><a href="#.">Terms & Conditions</a></li>
+                                        <li><a href="#.">Cookie Policy</a></li>
+                                        <li><a href="#.">Refunds & Returns</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-grid-child">
+                                <div class="footer-service-link">
+                                    <h4>Contact</h4>
+                                    <ul>
+                                        <li><a href="#.">My Account</a></li>
+                                        <li><a href="#.">F.A.Q</a></li>
+                                        <li><a href="#.">Support Desk</a></li>
+                                        <li><a href="#.">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-grid-child">
+                                <div class="footer-download">
+                                    <h4>Download</h4>
+                                    <div class="download-img">
+                                        <img src="{% static 'web/assets/img/googleplay.png' %}" alt="">
+                                        <img src="{% static 'web/assets/img/appstore.png' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="footer-bottom">
+                            <div class="row">
+                                <div class="col-sm-6 footer-bottom-reserved d-flex align-items-center">
+                                    <p>&copy 2022 Bay Market All Right Reserved</p>
+                                </div>
+        
+                                <div class="col-sm-6">
+                                    <div class="footer-bottom-icon d-flex justify-content-end">
+                                        <img src="{% static 'web/assets/img/icon/Facebook.png' %}"  class="mx-3" alt="">
+                                        <img src="{% static 'web/assets/img/icon/Instagram.png' %}" class="mx-3" alt="">
+                                        <img src="{% static 'web/assets/img/icon/Twitter.png' %}" class="ml-3" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- Filter Modal ########################### -->
+            <div class="modal fade" id="filter-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header d-block">
+                        <div class="filter">
+                            <div class="filter-blog">
+                                <div class="filter-header">
+                                    <div class="filter-name">
+                                        <h4>Saralash</h4>
+                                        <img src="{% static 'web/assets/img/baycar/element/filter.png' %}" alt="">
+                                    </div>
+                                    <div class="widget">
+                                        <h5 class="widget-title">Narxi</h5>
+                                        <div class="price_filter">
+                                            <div id="slider-range2"></div>
+                                            <div class="price_slider_amount">
+                                                <span>Narxi :</span>
+                                                
+                                                <input type="text" id="amount2" name="price" placeholder="Add Your Price" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">Joylashuv</h5>
+                                    <ul class="filter-accardion">
+                                        <li class="menu-item-has-children">
+                                            <p>Viloyat</p>
+                                            <ul class="submenu">
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Tashkent</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Andijon</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Namangan</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Farg'ona</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Buxoro</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Samarqand</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Jizzax</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Navoiy</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Qashqadaryo</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Surxandaryo</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Xorazm</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Sirdaryo</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="region" type="radio">
+                                                        <span class="marka-span">Qoraqalpog'iston Resp</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">Ma'lumot</h5>
+                                    <ul class="filter-accardion">
+                                        <li class="menu-item-has-children">
+                                            <p>Turi</p>
+                                            <ul class="submenu">
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="marka" type="radio">
+                                                        <span class="marka-span">Chevrolet</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="marka" type="radio">
+                                                        <span class="marka-span">Audi</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="marka" type="radio">
+                                                        <span class="marka-span">BMW</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="marka" type="radio">
+                                                        <span class="marka-span">Tesla</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="marka" type="radio">
+                                                        <span class="marka-span">Hyundai</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="marka" type="radio">
+                                                        <span class="marka-span">Kia</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                            <p>Holati</p>
+                                            <ul class="submenu">
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="event" type="radio">
+                                                        <span class="marka-span">Yangi</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="">
+                                                        <input class="marka-radio" name="event" type="radio">
+                                                        <span class="marka-span">Minilgan</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">E'lon beruvchi</h5>
+                                    <ul class="filter-announcement">
+                                        <li>
+                                            <label for="">
+                                                <input class="marka-radio" name="region" type="radio">
+                                                <span class="marka-span">Egasi</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="">
+                                                <input class="marka-radio" name="region" type="radio">
+                                                <span class="marka-span">Korxona</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div>
+                                <div class="filter-bottom">
+                                    <div class="filter-on-of">
+                                        <p>Avtosalon</p>
+                                        <label for="check">
+                                            <div class="on-of-btn">
+                                                <div id="r-l-box" class="r-box"></div>
+                                            </div>
+                                            <input type="checkbox" class="d-none" id="check">
+                                        </label>
+                                    </div>
+                                    <div class="filter-on-of">
+                                        <p>B/u</p>
+                                        <label for="check">
+                                            <div class="on-of-btn">
+                                                <div id="r-l-box" class="r-box"></div>
+                                            </div>
+                                            <input type="checkbox" class="d-none" id="check">
+                                        </label>
+                                    </div>                                
+                                    <div class="filter-on-of">
+                                        <p>Ijara</p>
+                                        <label for="check">
+                                            <div class="on-of-btn">
+                                                <div id="r-l-box" class="r-box"></div>
+                                            </div>
+                                            <input type="checkbox" class="d-none" id="check">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-btn">
+                                    <button>Saralash</button>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Yopish</button>
+                    <button type="button" class="btn btn-primary">Saralash</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+            <!-- Login Modal  ########################### -->
+            <div class="modal fade modal-login" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close modal-remove-btn" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true"><ion-icon name="close-outline"></ion-icon></span>
+                            </button>
+                          </div>
+                          <div class="modal-header-bottom">
+                              <h4>Kirish</h4>
+                              <p>Kirish uchun kerak ma'lumotlarni to'ldiring</p>
+                          </div>
+                          <div class="modal-body phone-body">
+                                <label class="label-fullname d-none">
+                                    <small>Ism Familya</small>
+                                    <input type="text"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 12) {this.value = 0}" connect="fullname" id="fullname">
+                                </label>
+                              <label class="label-phone">
+                                  <small>Telefon raqam</small>
+                                  <input type="tel"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 12) {this.value = 0}" connect="phone" id="phone-number">
+                              </label>
+                              <label class="label-password">
+                                <small>Parolni kiriting</small>
+                                <input type="password" connect="password" id="password">
+                              </label>
+                              <label class="label-insert-password d-none">
+                                <small>Parolni o'rnating</small>
+                                <input type="password" connect="new_password" id="password">
+                              </label>
+                              <p class="forgot-password"><a >Parolni unutdingizmi ?</a></p>
+                          </div>
+                          <!-- Message Body -->
+                          <div class="modal-body message-body d-none">
+                              <h3 class="minute-timer">02:44</h3>
+                              <div class="message-password">
+                                <input type="number"class="sms_password"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 12) {this.value = 0}" >
+                                <input type="number" class="sms_password" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 12) {this.value = 0}"  disabled>
+                                <input type="number" class="sms_password" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 12) {this.value = 0}"  disabled>
+                                <input type="number" class="sms_password" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 12) {this.value = 0}"  disabled>
+                                <input type="number" class="sms_password" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 12) {this.value = 0}"  disabled>
+                                <input type="number" class="sms_password" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 12) {this.value = 0}"  disabled>
+                              </div>
+                          </div>
+                          <!-- Message Body -->
+                          <div class="modal-footer">
+                            <a href="#." class="btn btn-main login" onclick="signin(this)">Kirish</a>
+                            <a href="#." class="btn outline-main register" onclick="register(this)">Ro'yhatdan otish</a>
+                          </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Suuces Modal ######################### -->
+              <div class="modal fade bd-example-modal-sm" id="announcement-success" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                  <div class="modal-content succes-modal">
+                    <div class="modal-header">
+                        <div><i class="bi bi-check2 icon-succes"></i></div>
+                    </div>
+                    <div class="">
+                        <h4>Tabriklaymiz</h4>
+                        <p>E'lon muvoffaqiyatlik joylashtrildi</p>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </main>
+    
+    </div>
+   
+    <script src="{% static 'web/assets/js/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/bootstrap/propper.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/plugins/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/plugins/slick.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/plugins/nav-tool.js' %}"></script>
+    <script src="{% static 'web/assets/js/plugins/plugins.js' %}"></script>
+    <script src="{% static 'web/assets/js/owl/owl.carousel.js' %}"></script>
+    <script src="{% static 'web/assets/js/owl/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'web/assets/js/main.js' %}"></script>
+
+
+    <script>
+        function register(element){
+            $(".label-password").addClass("d-none")
+            $("a.login").attr("onclick", "contin(this)")
+            $("a.login").text("Kod yuborish")
+            $(element).attr("onclick", "login(this)")
+            $(element).text("Akkauntga kirish")
+            $("input[connect='phone']").removeClass("border-danger")
+            $("input[connect='phone']").removeAttr("placeholder")
+            $("input[connect='password']").removeAttr("placeholder")
+            $("input[connect='password']").removeClass("border-danger")
+            $("p.forgot-password").addClass("d-none")
+            $(".modal-header-bottom").html(`
+            <h4>Ro'yxatdan o'tish</h4>
+            <p>Ro'yxatdan o'tish uchun raqamingizni kiriting</p>
+            `)
+        }
+    </script>
+    <script>
+        function login(element) {
+            $(".label-password").removeClass("d-none")
+            $("p.forgot-password").removeClass("d-none")
+            $("a.login").text("Kirish")
+            $("input[connect='phone']").removeClass("border-danger")
+            $("input[connect='phone']").removeAttr("placeholder")
+            $("a.login").attr("onclick", "signin(this)")
+            $(element).text("Ro'yxatdan o'tish")
+            $( element ).attr("onclick", "register(this)")
+
+            $(".modal-header-bottom").html(`
+            <h4>Kirish</h4>
+            <p>Kirish uchun kerak ma'lumotlarni to'ldiring</p>
+            `)
+        }
+    </script>
+    <script>
+        function contin(element) {
+            if ($("input[connect='phone']").val() != '') {
+                json = {
+                    phone:$("input[connect='phone']").val()
+                }
+                axios.post("phone/verify/", json, { 
+                    headers: { "ContentType": "application/json", "X-CSRFToken": csrfToken}
+                }).then( response => {
+                    if (response.data.code == 200) { 
+                        let jsonn = {phone_number: $("input[connect='phone']").val()}
+                        axios.post("send/message/", jsonn, { 
+                            headers: { "ContentType": "application/json", "X-CSRFToken": csrfToken}
+                        }).then(
+                            response => {
+                                if (response.data.code == 200) {
+                                    $("a.login").text("Tasdiqlash")
+                                    $("a.login").attr("onclick", "create(this)")
+                                    $("a.register").remove()
+                                    $(".modal-body.phone-body").addClass("d-none")   
+                                    $(".modal-body.message-body").removeClass("d-none")   
+                                } 
+                            }
+                        )
+                    }
+                    else {
+                        $("input[connect='phone']").addClass("border border-danger").attr("placeholder", "Bu raqam ro'yxatdan o'tgan")
+                    }
+                } )
+    
+            } else {
+                $("input[connect='phone']").addClass("border border-danger")
+                $("input[connect='phone']").attr("placeholder", "Iltimos raqamingizni to'ldiring")
+            }
+
+        }
+    </script>
+    <script>
+        function signin(element) {
+            if ($("input[connect='phone']").val() == '' ||  $("input[connect='password']").val() == '' ) {
+                if ($("input[connect='phone']").val() == '') {
+                    $("input[connect='phone']").addClass("border border-danger")
+                    $("input[connect='phone']").attr("placeholder", "Iltimos raqamingizni to'ldiring")
+                }  if ($("input[connect='password']").val() == '') {
+                    $("input[connect='password']").addClass("border border-danger")
+                    $("input[connect='password']").attr("placeholder", "Iltimos parolingizni to'ldiring")
+                }
+            }  else {
+                json = {
+                    phone_number:$("input[connect='phone']").val(),
+                    password: $("input[connect='password']").val()
+                }
+                axios.post("login/", json, { 
+                    headers: { "ContentType": "application/json", "X-CSRFToken": csrfToken}
+                }).then(response => {
+                    if (response.data.code == 200){
+                        document.location.reload(true)
+                    } 
+                    else {
+                        $("input[connect='phone']").addClass("border border-danger")
+                        $("input[connect='password']").addClass("border border-danger")
+                    }
+                })
+            }
+        }
+    </script>
+
+    <script>
+        function create(element) {
+           let $sms_password = ''
+           $(".sms_password").each((index, el)=>{
+                $sms_password += el.value
+           })
+           if ($sms_password.length == 6) {
+            json = {
+                phone_number:$("input[connect='phone']").val(),
+                sms_password: $sms_password
+            }
+
+            axios.post("verify/", json, { 
+                headers: { "ContentType": "application/json", "X-CSRFToken": csrfToken}
+            }).then( response => {
+                if (response.data.code == 200) {
+                    $(".label-phone").addClass("d-none")
+                    $(".label-password").addClass("d-none")
+                    $(".message-password").addClass("d-none")
+                    $(".label-insert-password").removeClass("d-none")
+                } else {
+                    $(".sms_password").each((index, el)=>{
+                    el.classList.add("border","border-danger")
+               })
+                }
+            })
+           }
+           else {
+            $(".sms_password").addClass("border border-danger")
+           }
+            }
+    </script>
+
+    <script>
+        $(".message-password input").on("input",function () {
+        if (this.value.length >= 1) {
+        this.value = this.value[0]
+          $(this).next('.message-password input').removeAttr('disabled');
+          $(this).next('.message-password input').focus();
+        } else {
+            $(this).prev('.message-password input').focus();
+        }
+    });
+    </script>
+
+    <script>
+        setTimeout(function() {
+            $('.logo').css('opacity', 0);   
+        }, 1000);
+    </script>
+
+    {% block bycarvue %}
+    {% endblock bycarvue %}
+
+    <style>
+        ion-icon {
+            font-size: 22px;
+            color: #8ca6b7 !important;
+          }
+    </style>
+
+</body>
+</html>

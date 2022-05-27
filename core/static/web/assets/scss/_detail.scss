@@ -1,0 +1,388 @@
+// ==============================================================
+// By Car detail
+// ==============================================================
+
+#wrapper-detail {
+    .wrapper-blog-detail {
+        .product-detail-content {
+            display: grid;
+            grid-template-columns: 8fr 5fr;
+            grid-gap: 30px;
+            @media #{$ms} {
+                grid-template-columns: 1fr;
+            }
+            .product-detail-wrap {
+                .product-detail-img {
+                    .tab-content {
+                        .shop-details-img {
+                            img {
+                                max-width: 100%;
+                                border-radius: 8px;
+                                height: 500px;
+                                object-fit: cover;
+                                object-position: center;
+                                @media #{$md} {
+                                    height: 400px;
+                                }
+                                @media #{$ms} {
+                                    height: 400px;
+                                }
+                                @media #{$smx} {
+                                    height: 300px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .product-detail-nav {
+                    .nav-tabs {
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        margin: 20px 0px;
+                        grid-gap: 15px;
+                        border-bottom: none !important;
+                        .nav-item {
+                            .nav-link {
+                                padding: 0px !important;
+                                border: none;
+                                display: flex;
+                                align-items: center;
+                                img {
+                                    border-radius: 4px;
+                                    opacity: 0.6;
+                                    transition: 0.5s;
+                                }
+                            }
+                            .nav-link.active {
+                                img {
+                                    opacity: 1;
+                                    transition: 0.5s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .product-detail-about { 
+                background-color: $white;
+                padding: 20px 25px;
+                border-radius: 8px;
+                box-shadow: 0px 4px 11px rgba(9, 88, 142, 0.09);
+                position: relative;
+               .p-d-date {
+                    color: $text;
+                    padding-bottom: 15px;
+               } 
+               .p-d-heart {
+                   position: absolute;
+                   right: 25px;
+                   top: 20px;
+                   ion-icon {
+                       color: $gray-dark;
+                       font-size: 28px;
+                       cursor: pointer;
+                   }
+               }
+               .p-d-title {
+                   h5 {
+                       color: $link;
+                       font-weight: 500;
+                       font-size: 22px;
+                       @media #{$md} {
+                        font-size: 20px;
+                        }
+                        @media #{$smx} {
+                            font-size: 18px;
+                        }
+                   }
+               }
+               .p-d-price {
+                   display: flex;
+                   align-items: center;
+                   padding: 25px 0px;
+                   h4 {
+                       color: $text;
+                       padding: 0px 20px 0px 0px;
+                       @media #{$smx} {
+                            font-size: 18px;
+                        }
+                        
+                   }
+                   h5 {
+                       color: $gray-dark;
+                       font-weight: 500;
+                       @media #{$smx} {
+                        font-size: 14px;
+                        }
+                   }
+               }
+               .p-d-more {
+                    h4 {
+                        color: $text;
+                        font-size: 20px;
+                        @media #{$smx} {
+                            font-size: 18px;
+                        }
+                    }
+                    .p-d-grid {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-gap: 25px;
+                        padding: 10px 0px;
+                        @media #{$smx} {
+                            grid-template-columns: 1fr; 
+                        }
+                        p {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            align-items: center;
+                            grid-gap: 25px;
+                            font-size: 13px;
+                            padding: 3px 0px;
+                            @media #{$md} {
+                                font-size: 10px;
+                                padding: 1px 0px;
+                            }
+                            @media #{$ms} {
+                                font-size: 12px;
+                                padding: 1px 0px;
+                            }
+                            .light-title {
+                                color: $gray-dark;
+                            }
+                            .bold {
+                                font-weight: 600;
+                                color: $text;
+                            }
+                        }
+                   }
+               }
+               .p-d-content {
+                   padding: 15px 0px;
+                    h4 {
+                       color: $text;
+                       @media #{$smx} {
+                        font-size: 18px;
+                        }
+                    }
+
+                   p {
+                       color: $text;
+                       padding: 10px 0px;
+                       font-size: 15px;
+                       @media #{$md} {
+                            font-size: 14px;
+                        }
+                        @media #{$smx} {
+                            font-size: 13px;
+                        }
+                   }
+               }
+               .p-d-description {
+                .filter-accardion {
+                    li {
+                        ul {
+                            display: none;
+                        }
+                    }
+                    .menu-item-has-children {
+                      position: relative;
+                      .top-t {
+                          color: $text;
+                          font-weight: 600;
+                      }
+                      .dropdown-btn {
+                          position: absolute;
+                          left: 75px;
+                          top: 3px;
+                          cursor: pointer;
+                          -webkit-transition: all 500ms ease;
+                          -o-transition: all 500ms ease;
+                          transition: all 500ms ease;
+                          transform: rotate(0deg);
+                          ion-icon {
+                              font-size: 16px;
+                              color: $text;
+                          }
+                      }
+                      .open {
+                          position: absolute;
+                          top: -4px;
+                          transform: rotate(-180deg);
+                      }
+                      ul {
+                        padding: 5px 0px;
+                        p {
+                            color: $text;
+                            font-size: 15px !important;
+                            font-weight: 500px !important;
+                            @media #{$md} {
+                                font-size: 14px !important
+                                ;
+                            }
+                        }   
+                      }
+                    }
+                  }
+               }
+               .p-d-footer {
+                   display: flex;
+                   justify-content: space-between;
+                   flex-wrap: wrap;
+                    p {
+                        display: flex;
+                        align-items: center;
+                        color: $text;
+                        padding: 15px 0px;
+                        @media #{$md} {
+                            font-size: 14px !important;
+                        }
+                       a {
+                        display: flex;
+                        align-items: center;
+                        &:hover {
+                            color: #FF2E2E;
+                        }   
+                       }
+                       ion-icon {
+                           padding: 0px 10px;
+                           color: $text;
+                       }
+                   }
+               }
+            }
+
+            .product-detail-chat {
+                background-color: $white;
+                padding: 20px 25px;
+                border-radius: 8px;
+                margin: 40px 0px;
+                .user-blog {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 0px 20px 0px;
+                    
+                    @media #{$smx} {
+                        flex-wrap: wrap;
+                    }
+                    .user-about {
+                        display: grid;
+                        grid-template-columns: 1fr 3fr;
+                        align-items: center;
+
+                        img {
+                            width: 40px;
+                            border-radius: 50%;
+                        }
+                        p {
+                            padding: 2px 0px;
+                            color: $text;
+                            font-size: 14px;
+                        }
+                    }
+                    .user-number {
+                        display: grid;
+                        grid-template-columns: 4fr 3fr;
+                        grid-gap: 20px;
+                        align-items: center;
+                        @media #{$smx} {
+                            padding-top: 20px;
+                        }
+                        @media #{$md} {
+                            grid-template-columns: 1fr;
+                        }
+                        @media #{$lsm} {
+                            grid-template-columns: 1fr;
+                        }
+                        p {
+                            display: flex;
+                            align-items: center;
+                            font-size: 13px;
+                            font-weight: 600;
+                            @media #{$md} {
+                                font-size: 12px !important;
+                            }
+                            ion-icon {
+                                background-color: $succes-green;
+                                color: $white;
+                                margin: 0px 10px;
+                                padding: 5px;
+                                font-size: 16px;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+                .send-message {
+                    textarea {
+                        border: none;
+                        background-color: $backgound;
+                        border-radius: 8px;
+                        width: 100%;
+                        padding: 25px 20px;
+                        font-size: 15px;
+                        color: $text;
+                    }
+                }
+                .chat-footer {
+                    display: flex;
+                    justify-content: end;
+                    padding: 20px 0px;
+                    p {
+                        display: flex;
+                        align-items: center;
+                        color: $text;
+                        ion-icon {
+                            transform: rotate(45deg);
+                            margin: 0px 5px;
+                        }
+                    }
+                }
+            }
+            .product-detail-banner {
+                .b-user-blog {
+                    background-color: $white;
+                    padding: 25px;
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 11px rgba(9, 88, 142, 0.09);
+                    margin-bottom: 30px;
+                    h5 {
+                        color: $text;
+                        font-size: 20px;
+                    }
+                    .b-user-about {
+                        display: grid;
+                        grid-template-columns: 1fr 5fr;
+                        grid-gap: 25px;
+                        align-items: center;
+                        padding: 15px 0px;
+                        img {
+                            width: 50px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                        p {
+                            padding: 4px 0px;
+                            color: $text;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

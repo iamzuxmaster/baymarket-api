@@ -1,0 +1,473 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section id="showcase" class="showcase">
+        <div class="showcase-blog">
+            <div class="showcase-header">
+                <div class="tarnirovka d-flex align-items-center">
+                    <div class="showcase-header-text">
+                        <div class="row d-flex justify-content-center mr-0 ml-0">
+                            <div class="col-md-10 col-10 m-auto">
+                                <h1 class="text-white">Buy and sell a car</h1>
+                                <p class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid id nisi beatae repudiandae, et optio!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-body">
+                <div class="container">
+                    <div class="category-menu">
+                        <h2 class="category-name">Toifalar</h2>
+                        <div class="category-menu-blog owl-carousel">
+                            {% for category in categories %}
+                            <div class="category-box item">
+                                <a href="{% url 'web_baycar_category' category.slug %}">
+                                    <h5 class="category-title">{{ category.title_ru }}</h5>
+                                    <img src="{{ category.img.url }}" alt="">
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="wrapper">
+        <div class="wrapper-blog">
+            <div class="container">
+                <div class="products-content" id="root">
+
+                    <div class="product-content-child">
+                        <div id="left-filter" class="filter">
+                            <div class="filter-blog">
+                                <div class="filter-header pb-3">
+                                    <div class="filter-name">
+                                        <h4>Saralash</h4>
+                                        <img src="{% static 'web/assets/img/baycar/element/filter.png' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="filter-body">
+                                    <ul class="filter-accardion">
+                                        <li class="menu-item-has-children prp">
+                                            <p>Narxi</p>
+                                            <ul class="submenu sub_price_type">
+                                                <li class="left-filter-input">
+                                                    <input id="minPrice" type="number" placeholder="Narxdan"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 1000000000) {this.value = 0}">
+                                                    <input id="maxPrice" type="number" placeholder="Narxgacha" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); if (this.value.length > 1000000000000000000) {this.value = 0}">
+                                                </li>
+                                                <div class="left-select-price">
+                                                    <select id="price_typed" name="">
+                                                        <option value="uzs">uzs</option>
+                                                        <option value="y.e">y.e</option>
+                                                    </select>
+                                                </div>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <hr>
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">Joylashuv</h5>
+                                    <ul class="filter-accardion">
+                                        <li class="menu-item-has-children">
+                                            <p>Viloyat</p>
+                                            <ul class="submenu">
+                                                <li v-for="region in regions">
+                                                    <label>
+                                                        <input class="marka-radio region-checked" :data-region="[[ region.id ]]" name="region" type="radio">
+                                                        <span class="marka-span">[[ region.title ]]</span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div>
+                                <div class="filter-body">
+                                    <h5 class="f-name">Ma'lumot</h5>
+                                    <ul class="filter-accardion">
+                                        <li class="menu-item-has-children">
+                                            <p>Turi</p>
+                                            <ul class="submenu">
+                                                {% for subcategory in subcategories %}
+                                                <li>
+                                                    <label>
+                                                        <input class="marka-radio car-brand" name="marka"   data-brand="{{ subcategory.title_uz }}" type="radio">
+                                                        <span class="marka-span">{{ subcategory.title_ru }}</span>
+                                                    </label>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div> 
+                                <div class="filter-body">
+                                    <h5 class="f-name">E'lon beruvchi</h5>
+                                    <ul class="filter-announcement">
+                                        <li>
+                                            <label>
+                                                <input class="marka-radio announcement" name="announcement" data-ann="egasi" type="radio">
+                                                <span class="marka-span">Egasi</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="">
+                                                <input class="marka-radio announcement" name="announcement" data-ann="Korxona" type="radio">
+                                                <span class="marka-span">Korxona</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <hr class="mt-4">
+                                </div>
+                                <div class="filter-bottom">
+                                    <div class="filter-on-of">
+                                        <p>Avtosalon</p>
+                                        <label>
+                                            <div class="on-of-btn">
+                                                <div id="r-l-box" class="r-box"></div>
+                                            </div>
+                                            <input type="checkbox" class="d-none salon">
+                                        </label>
+                                    </div>
+                                    <div class="filter-on-of">
+                                        <p>B/u</p>
+                                        <label>
+                                            <div class="on-of-btn">
+                                                <div id="r-l-box" class="r-box"></div>
+                                            </div>
+                                            <input type="checkbox" class="d-none bu">
+                                        </label>
+                                    </div>  
+                                    <div class="filter-on-of">
+                                        <p>Ijara</p>
+                                        <label>
+                                            <div class="on-of-btn">
+                                                <div id="r-l-box" class="r-box"></div>
+                                            </div>
+                                            <input type="checkbox" class="d-none rent">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-btn">
+                                    <button @click="filter">Saralash</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-content-child">
+                        <div class="products-nav">
+                            <h4 class="p-nav-name">Top E'lonlar</h4>
+                            <div class="grid-list-filter">
+                                <div id="grid-icon-btn" class="f-icon icon-grid active">
+                                    <ion-icon name="grid-outline"></ion-icon>
+                                </div>
+                                <div id="list-icon-btn" class="f-icon icon-list">
+                                    <ion-icon name="list-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="products">
+                            <div v-show="loader" id="loader" style="z-index: 99999;">
+                                <div class="lds-ripple"><div></div><div></div></div>
+                            </div>
+                            <div v-show="pro_content">
+                                <!-- Products Grid =================================== -->
+                                <div id="grid-products" class="products-blog">
+                                    <div class="products-box" v-for="product in products">
+                                        <div>
+                                            <a :href="[[ product.link ]]" class="img-a">
+                                                <img :src="product.img_min" alt="">
+                                            </a> 
+                                            <div class="product-about">
+                                                <div class="product-title">
+                                                    <a :href="[[ product.link ]]">[[ product.title ]]</a>
+                                                    <ion-icon name="heart-outline"></ion-icon>
+                                                </div>
+                                                <p class="product-price">[[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></p>
+                                                <p class="product-address">[[ product.district ]]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Productsc List ================================   -->
+                                <div id="list-products" class="products-blog-list d-none">
+                                    <div class="product-list-box">
+                                        
+                                        <div class="grid-div" v-for="product in products">
+                                            <a :href="[[ product.link ]]" class="img-a">
+                                                <img :src="product.img_min" alt="">
+                                            </a> 
+                                            <div class="product-about">
+                                                <div class="product-about-child d-block">
+                                                    <div class="product-title">
+                                                        <a :href="[[ product.link ]]">[[ product.title ]]</a>
+                                                        <p class="product-price d-block text-right">[[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></p>
+                                                    </div>
+                                                    <h5><ion-icon name="cash-outline"></ion-icon> [[ product.price ]] <span v-if="product.dollar">$</span> <span v-else-if="product.sum">So'm</span></h5>
+                                                    <p class="calendar"><ion-icon name="calendar-clear-outline"></ion-icon>[[ product.year ]]</p>
+                                                    <p class="speedometer"><ion-icon name="speedometer-outline"></ion-icon>[[ product.km ]] km</p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="location"><ion-icon name="location-outline"></ion-icon>[[ product.region ]]</p>
+                                                        <div class="heart-ion-icon text-right">
+                                                            <ion-icon name="heart-outline"></ion-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+{% endblock content %}
+
+
+
+{% block bycarvue %}
+    <script>
+        Vue.config.ignoredElements = [/^ion-/]
+        let app = new Vue ({
+            delimiters: [ '[[', ']]'],
+            el: '#root',     
+            data: {
+                loader: true,
+                pro_content: false,
+                categories: [],
+                subcategories: [],
+                regions: [],
+                products: [],
+
+                // Filter Spiska
+                region: '',
+                brand: '',
+                announcement: '',
+                salon: '',
+                b_u: '',
+                rent: '',
+                price_type: '',
+                minPrice: '',
+                maxPrice: '',
+                
+            },
+            mounted() {
+                fetch('/init/ru/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        if (data.code == 200) {
+                            this.loader = false
+                            this.pro_content = true
+                            this.categories = data['categories']
+                            this.subcategories = data['subcategories']
+                            this.products = data['products']
+                            this.regions = data['regions']
+                            this.products.forEach(price => {
+                                console.log(price.price);
+                            })
+                            console.log(this.products);
+                        }
+                })
+            },
+
+            methods: {
+                filter() {
+                        if(document.querySelectorAll('.region-checked')) {
+                            let region_redio = document.querySelectorAll('.region-checked')
+                            let car_brand = document.querySelectorAll('.car-brand')
+                            let car_ann = document.querySelectorAll('.announcement')
+                            let car_salon = document.querySelector('.salon')
+                            let car_bu = document.querySelector('.bu')
+                            let car_rent = document.querySelector('.rent')
+                            let price_type = document.querySelector('#price_typed')
+                            let minPrice = document.querySelector('#minPrice')
+                            let maxPrice = document.querySelector('#maxPrice')
+                            
+                            region_redio.forEach(r => {
+                                if(r.checked){
+                                    this.region = r.dataset.region
+                                }
+                            })
+                                   
+                            car_brand.forEach(b => {
+                                if(b.checked){
+                                    this.brand = b.dataset.brand
+                                }
+                            })
+                                                        
+                            car_ann.forEach(a => {
+                                if(a.checked){
+                                   this.announcement = a.dataset.ann
+                                }
+                            })
+                                                       
+                            if(car_salon.checked){
+                                this.salon = 'True'
+                            } else {    
+                                this.salon = 'False'
+                            }
+                                        
+                            if(car_bu.checked){
+                                this.b_u = 'True'
+                            } else {
+                                this.b_u = 'False'
+                            }
+            
+                            if(car_rent.checked){
+                                this.rent = 'True'
+                            } else {
+                                this.rent = 'False'
+                            }
+
+                            this.price_type = price_type.value
+                            this.minPrice = minPrice.value
+                            this.maxPrice = maxPrice.value
+
+                        }
+
+                        fetch('/baycar/filter/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': csrfToken
+                            }, 
+                            body: JSON.stringify({
+                                min_price: this.minPrice,
+                                max_price: this.maxPrice,
+                                price_type: this.price_type,
+                                region: this.region,
+                                announcement: this.announcement,
+                                salon: this.salon,
+                                b_u: this.b_u,
+                                rent: this.rent,
+                              })
+                            })
+                            .then(resp => resp.json())
+                            .then(data => {
+                                if (data.code == 200) {
+                                    this.products = data.products
+                                }
+                        })
+                    }
+                }
+            })
+
+        // ################# List Grid Products #######################
+        if(document.querySelector('#grid-products')) {
+            let grid_btn = document.querySelector('#grid-icon-btn')
+            let list_btn = document.querySelector('#list-icon-btn')
+            let grid_products = document.querySelector('#grid-products')
+            let list_products = document.querySelector('#list-products')
+
+            grid_btn.addEventListener('click', () => {
+                grid_products.classList.remove('d-none')
+                grid_btn.classList.add('active')
+                setTimeout(function() {
+                    grid_products.classList.add('products-animation-top')
+                }, 400 );
+                setTimeout(function() {
+                    list_products.classList.add('d-none')
+                }, 400 );
+                list_products.classList.remove('products-animation-top')
+                list_products.classList.add('products-animation-bottom')
+                list_btn.classList.remove('active')
+            }) 
+
+            list_btn.addEventListener('click', () => {
+                list_products.classList.remove('d-none')
+                list_btn.classList.add('active')
+                setTimeout(function() {
+                    list_products.classList.add('products-animation-top')
+                }, 400 );
+                setTimeout(function() {
+                    grid_products.classList.add('d-none')
+                }, 400 );
+                grid_products.classList.remove('products-animation-top')
+                grid_products.classList.add('products-animation-bottom')
+                grid_btn.classList.remove('active')
+            }) 
+            
+        }
+   
+    </script>
+
+    <!-- ##################### Main js ###################### -->
+    <script>
+        
+        // Slider Price Left
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 700,
+            values: [0, 700],
+            slide: function (event, ui) {
+                $("#amount").val("" + ui.values[0] + " - " + ui.values[1]);
+            }
+        });
+        $("#amount").val("" + $("#slider-range").slider("values", 0) + " - " + $("#slider-range").slider("values", 1));
+        
+        // Slider Price Modal
+        $("#slider-range2").slider({
+            range: true,
+            min: 0,
+            max: 700,
+            values: [0, 700],
+            slide: function (event, ui) {
+                $("#amount2").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            }
+        });
+        $("#amount2").val("$" + $("#slider-range2").slider("values", 0) + " - $" + $("#slider-range2").slider("values", 1));
+        
+        //Filter Dropown Toggle
+        if ($('.filter-accardion li.menu-item-has-children ul').length) {
+            $('.filter-accardion li.menu-item-has-children').append('<div class="dropdown-btn"><ion-icon name="chevron-down-outline"></ion-icon></div>');
+
+        }
+
+        // Filter Accardion
+        if ($('.filter-accardion').length) {
+
+            //Dropdown Button
+            $('.filter-accardion li.menu-item-has-children .dropdown-btn').on('click', function () {
+                $(this).toggleClass('open');
+                $(this).prev('ul').slideToggle(500);
+            });
+        }
+
+        // On of Btn
+        if (document.querySelectorAll('.on-of-btn')) {
+            let change_label = document.querySelectorAll('.on-of-btn')
+            let box = document.querySelectorAll('#r-l-box')
+            change_label.forEach((ch_b, index) => {
+                ch_b.addEventListener('click', () => {
+                        if(box[index].classList.value.includes('r-box')) {
+                            box[index].classList.replace('r-box', 'l-box')
+                        } else {
+                            box[index].classList.replace('l-box', 'r-box')
+                        }
+                })
+            })
+        
+        }
+    </script>
+{% endblock bycarvue %}
+
